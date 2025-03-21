@@ -1,0 +1,71 @@
+.sidebar {
+    position: relative; /* Add position relative to establish a new stacking context */
+    z-index: 1; /* Add z-index to ensure the sidebar is above other elements */
+    width: 200px;
+    background-color: #d31414;
+    padding: 0px;
+  }
+
+  /* Styling for the sidebar links */
+  .sidebar a {
+    display: block;
+    color: #f7f0f0;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid rgb(248, 245, 245);
+  }
+
+  .sidebar a:hover {
+    background-color: #e74e4e;
+  }
+
+  /* Styling for the dropdown menu */
+  .dropdown {
+    position: relative; /* Add position relative to establish a new stacking context */
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute; /* Position the dropdown content relative to the parent .dropdown */
+    top: 10;
+    left: 0%; /* Position the dropdown content to the right of the parent .dropdown */
+    z-index: 999; /* Add z-index to ensure the dropdown appears above other elements */
+    width:100%;
+    
+  }
+
+  .dropdown-content a {
+    padding: 6px 0;
+    background-color: rgb(212, 42, 12);
+    border:1px solid rgb(201, 197, 197);
+  }
+
+  /* Styling for the active dropdown menu */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .margintop{
+
+    margin-top:50px;
+  }
+
+  .page-profile .profile-inner-container .sidebar {
+    background-color: #d10e0e;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 0px 1px 1px #f5eeee;
+    width: 100%;
+    color: #f6f6f7;
+}
+
+.dropdown:hover .dropdown-content a {
+  background: #111 !important;
+}
+
+
+.dropdown-content {
+position: relative !important;
+transition: all 1s !important;
+}

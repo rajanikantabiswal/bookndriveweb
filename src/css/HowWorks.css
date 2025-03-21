@@ -1,0 +1,54 @@
+.whtclr{
+    font-size:12px;
+    color:white;
+}
+
+.whtclrs{
+    font-size:16px;
+    color:white;
+}
+
+.imageload{
+    background-color: white;
+    border-radius: 50%;
+    margin-left:100px;
+    
+}
+.imageload .img{
+    width:100%;
+    margin-top:5px;
+    
+}
+
+.rent-drive-promo-area{
+    padding:50px;
+}
+
+.site-heading-title{
+    color:white;
+}
+
+.hr-tag{
+    color:white;
+    font-weight: bold;
+}
+
+.details{
+    width:100% !important;
+    text-align: center;
+}
+
+@media (min-width: 400px) {
+ 
+
+    .imageload{
+        background-color: white;
+        border-radius: 50%;
+        height:120px;
+        width:120px;
+        
+    }
+}
+
+
+

@@ -1,0 +1,80 @@
+.profile-verification-status {
+    text-align: center;
+    color: #1f1f1f;
+    font-size: 14px;
+    line-height: 20px;
+    position: relative;
+}
+
+.top-section {
+    margin: 16px 0 40px;
+}
+
+.hero-image {
+    margin-bottom: 32px;
+}
+
+.hero-image img {
+    max-width: 232px;
+    min-width: 232px;
+    width: 100%;
+}
+
+.top-section .heading {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.top-section .sub-heading {
+    color: #666666;
+}
+
+.verificatoin-steps {
+    padding: 0 16px;
+    text-align: left;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.verificatoin-steps .heading {
+    padding: 4px 8px;
+    background: #f5f5f5;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.verificatoin-steps .steps {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.verificatoin-steps .steps .number {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 50%;
+    font-weight: bold;
+    z-index: 1;
+    position: relative;
+}
+
+.verificatoin-steps .steps .text {
+    margin-left: 8px;
+}
+
+.floating-cta .heading a {
+    color: #10a310;
+    text-decoration: underline;
+}
+
+.floating-cta .heading {
+    margin-bottom: 8px;
+}
