@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaKey, FaLock, FaUser, FaRegEnvelope } from "react-icons/fa";
 
-import "./Register.css";
+// import "./Register.css";
 
 const Register = () => {
-    const { t } = useTranslation();
 
     const SubmitHandler = (e) => {
         e.preventDefault();
@@ -21,13 +19,13 @@ const Register = () => {
                         <div className="login-box">
                             <div className="login-page-heading">
                                 <FaKey />
-                                <h3>{t("register_page.singup")}</h3>
+                                <h3>Sign Up</h3>
                             </div>
                             <form onSubmit={SubmitHandler}>
                                 <div className="account-form-group">
                                     <input
                                         type="text"
-                                        placeholder={t("register_page.username")}
+                                        placeholder="Username"
                                         name="username"
                                     />
                                     <FaUser />
@@ -35,7 +33,7 @@ const Register = () => {
                                 <div className="account-form-group">
                                     <input
                                         type="text"
-                                        placeholder={t("register_page.email")}
+                                        placeholder="Email"
                                         name="username"
                                     />
                                     <FaRegEnvelope />
@@ -43,7 +41,7 @@ const Register = () => {
                                 <div className="account-form-group">
                                     <input
                                         type="password"
-                                        placeholder={t("register_page.password")}
+                                        placeholder="Password"
                                         name="password"
                                     />
                                     <FaLock />
@@ -51,7 +49,7 @@ const Register = () => {
                                 <div className="account-form-group">
                                     <input
                                         type="password"
-                                        placeholder={t("register_page.c_password")}
+                                        placeholder="Confirm Password"
                                         name="password"
                                     />
                                     <FaLock />
@@ -65,18 +63,18 @@ const Register = () => {
                                         />
                                         <label htmlFor="Freelance">
                                             <span />
-                                            {t("register_page.terms")}
+                                            Terms and Conditions
                                         </label>
                                     </p>
                                 </div>
                                 <p>
                                     <button type="submit" className="gauto-theme-btn">
-                                        {t("register_page.register_now")}
+                                        Register Now
                                     </button>
                                 </p>
                             </form>
                             <div className="login-sign-up">
-                                <Link to="/login">{t("register_page.have_account")}</Link>
+                                <Link to="/login">Already have an account?</Link>
                             </div>
                         </div>
                     </Col>

@@ -1397,7 +1397,7 @@ color: #ec3323;
     background-color: #eee;
     background-size: cover;
     background-repeat: no-repeat;
-    height: auto;
+    min-height: 90vh;
 }
 
 .slider-content-holder {
@@ -1498,7 +1498,7 @@ color: #ec3323;
 
 .rent-drive-find-area {
     margin-top: -50px;
-    background: #ececec;
+    background: #fff;
 }
 
 .find-box {
@@ -2122,10 +2122,10 @@ body .text-theme{
 
 .rent-drive-testimonial-area {
     position: relative;
-    /* background: url(img/bg-theme.svg) no-repeat fixed 0 0/cover; */
-    background: url(img/bg-theme.svg) no-repeat fixed 0 0/cover;
+    background: url(img/home_banner.webp) no-repeat fixed 0 0/cover;
     z-index: 1;
-    padding-bottom: 100px
+    padding-bottom: 100px;
+    min-height: 90vh;
 }
 
 .rent-drive-testimonial-area:after {
