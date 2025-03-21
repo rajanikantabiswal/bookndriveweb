@@ -6,6 +6,7 @@ import Homepage from "./HomePage";
 import Homepage2 from "./HomePage2";
 import LoginPage from "./LoginPage";
 import LoginPages from "./LoginPages";
+import Register from "../components/Register"; 
 import LoginPages2 from "./LoginPages2";
 import CarDetail from "./CarDetail";
 import CarBooking from "./CarBooking";
@@ -351,7 +352,7 @@ const AllRoute = () => {
                         <Route path='/otp' element={<OtpPage />} />
                         <Route path='/otps' element={<OtpPages />} />
                         <Route path="*" element={<Homepage />} />
-                        <Route path='/register'  element={<LoginPages />} />
+                        <Route path='/register'  element={<Register />} />
                         <Route path='/mpanel'  element={<LoginPages2 />} />
                         <Route path='/host'  element={<Host />} />
                         <Route path='/welcome'  element={<Welcome />} />

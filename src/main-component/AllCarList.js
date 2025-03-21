@@ -169,7 +169,7 @@ class VendorListCar extends Component {
                 <td data-label="Color">{val.color}</td>
                 <td data-label="Price">{val.price}</td>
                
-                <td data-label="Car Image"><img alt={val.car_name} src={'http://127.0.0.1:8000/public/'+val.car_image} width='60'/> </td>
+                <td data-label="Car Image"><img alt={val.car_name} src={'http://127.0.0.1:8000/'+val.car_image} width='60'/> </td>
                 <td data-label="Addon">{val.created_at}</td>
                 <td data-label="Action">
                     <b className={bts} onClick={this.handleClick9.bind(this, val.id)} >{title}</b>

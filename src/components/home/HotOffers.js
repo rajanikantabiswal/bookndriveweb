@@ -212,7 +212,7 @@ class HotOffers extends Component {
                     <div className="single-offers px-2">
                         <div className="offer-image">
                             <Link to="/car-booking">
-                                <img src={'http://127.0.0.1:8000/public/' + val.image} alt="offer 1" />
+                                <img src={'http://127.0.0.1:8000/' + val.image} alt="offer 1" />
                             </Link>
                         </div>
                         <div className="offer-text">
@@ -318,8 +318,8 @@ class HotOffers extends Component {
                     <Row>
                         <Col md={12}>
                             <div className="site-heading">
-                                <h4>Come With</h4>
-                                <h2>Hot Offers</h2>
+                                {/* <h4>Come With</h4> */}
+                                <h2>Find Your Perfect Drive!</h2>
                             </div>
                         </Col>
                     </Row>

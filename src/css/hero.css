@@ -2,7 +2,8 @@
    color:#282828;
    display: flex;
    align-items: center;
-   min-height: 400px;
+   min-height: 40px;
+   padding-top: 2.5%;
 }
 
 .font-title{
@@ -68,12 +69,13 @@
 } */
 .hero-title-1, .hero-title-2{
    color: #282828;
-   font-size: 3rem;
+   font-size: 2rem;
    font-weight: 700;
    display: block;
    line-height: 1;
 }
 .hero-title-2{
+   font-size: 3rem;
    color: #f00010;
 }
 @media only screen and (min-width: 600px) {

@@ -20,9 +20,9 @@ const HomePage = () => {
             <Hero />
             <FindCar />
             {/* <About /> */}
-            <Service />
+            {/* <Service /> */}
             <HotOffers />
-            {/* <HowWorks/> */}
+            <HowWorks/>
             <WhyChoose/>
             <Testimonial />
             <Faq />
