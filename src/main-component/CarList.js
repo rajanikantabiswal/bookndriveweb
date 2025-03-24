@@ -9,6 +9,7 @@ import Faq from "../components/home/Faq";
 import SettingIcon from "../img/setting-cog.svg";
 import OilTypelIcon from "../img/hybrid-car.svg";
 import RoadIcon from "../img/road.svg";
+import MilageIcon from "../img/milage.png";
 
 import "../css/CarList.css";
 
@@ -144,14 +145,14 @@ class CarList extends Component {
                                 <img src={'http://127.0.0.1:8000/public/' + val.image} alt="offer 1" />
                             </Link>
                         </div>
-                        <div className="offer-text">
+                        <div className="offer-text pt-3">
                             <Link to="/car-booking">
                                 <h3>{val.car_name}&nbsp;{val.model_name}&nbsp;{val.variant_name}</h3>
                             </Link>
                             
                             <ul className="fw-bold">
                                 <li>
-                                    <img src={RoadIcon} className="img-fluid" />
+                                    <img src={MilageIcon} className="img-fluid" />
                                     {val.avrage} 
                                     
                                 </li>

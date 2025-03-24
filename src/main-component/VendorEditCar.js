@@ -648,9 +648,10 @@ class VendorAddCar extends Component {
                                 onChange={this.handleChange}
                                 className="form-control"
                              >
-                              <option value="Desel">Desel</option>
+                              <option value="">Select</option>
                               <option value="Petrol">Petrol</option>
-                              <option value="CNG">CNG</option>
+                              <option value="Diesel">Diesel</option>
+                              <option value="EV">EV</option>
                               </select>
                           </Col>
                           <Col md={2}>
