@@ -12,6 +12,7 @@ import HotOffers from "../components/home/HotOffers";
 import Footer from "../components/Footer";
 import Testimonial from "../components/Testimonial";
 import Faq from "../components/home/Faq";
+import DateTimeRangePicker from "../components/DateTimeRangePicker";
 
 const HomePage = () => {
     return (
@@ -19,6 +20,7 @@ const HomePage = () => {
             <Header />
             <Hero />
             <FindCar />
+            <DateTimeRangePicker />
             {/* <About /> */}
             {/* <Service /> */}
             <HotOffers />
