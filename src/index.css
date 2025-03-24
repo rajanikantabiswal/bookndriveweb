@@ -1824,7 +1824,7 @@ body .text-theme{
 
 .rent-drive-promo-area {
     position: relative;
-    background: url(img/promo_bg.jpg) no-repeat fixed 0 0/cover;
+    background: #000000;
     z-index: 1;
 }
 
@@ -1835,7 +1835,6 @@ body .text-theme{
     right: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
     z-index: -1;
 }
 
@@ -1985,12 +1984,13 @@ body .text-theme{
 
 .offer-image img {
     width: 100%;
+    height: 200px;
 }
 
 .offer-text {
     margin-top: 10px;
     background: #f7f7f7;
-    padding: 15px;
+    padding: 50px 15px;
     min-height: 100px;
 }
 

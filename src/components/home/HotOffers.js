@@ -13,6 +13,7 @@ import Settings from "react-multi-date-picker/plugins/settings";
 import SettingIcon from "../../img/setting-cog.svg";
 import OilTypelIcon from "../../img/hybrid-car.svg";
 import RoadIcon from "../../img/road.svg";
+import MilageIcon from "../../img/milage.png";
 
 function NavigateWrapper() {
     
@@ -222,7 +223,7 @@ class HotOffers extends Component {
                             
                             <ul className="fw-bold">
                                 <li>
-                                    <img src={RoadIcon} className="img-fluid" />
+                                    <img src={MilageIcon} className="img-fluid" />
                                     {val.avrage} 
                                     
                                 </li>
@@ -263,7 +264,7 @@ class HotOffers extends Component {
                                 >
                                     Rent
                                 </Link> */}
-                                 <a href="#MainSearch" className="btn btn-outline-danger p-2 scrollto"> Book Car</a>
+                                 <a href="#MainSearch" className="btn btn-outline-danger px-4 py-2 scrollto"> Book</a>
                                 
                                 </div>
                             </div>
