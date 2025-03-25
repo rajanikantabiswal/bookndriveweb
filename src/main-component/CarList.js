@@ -139,13 +139,13 @@ class CarList extends Component {
 
             return (
                 <Col lg={4}>
-                    <div className="single-offers">
+                    <div className="single-offers px-2">
                         <div className="offer-image">
                             <Link to="/car-booking">
-                                <img src={'http://127.0.0.1:8000/public/' + val.image} alt="offer 1" />
+                                <img src={'http://127.0.0.1:8000/' + val.image} alt="offer 1" />
                             </Link>
                         </div>
-                        <div className="offer-text pt-3">
+                        <div className="offer-text">
                             <Link to="/car-booking">
                                 <h3>{val.car_name}&nbsp;{val.model_name}&nbsp;{val.variant_name}</h3>
                             </Link>
@@ -158,7 +158,7 @@ class CarList extends Component {
                                 </li>
                                 <li>
                                     <img src={OilTypelIcon} className="img-fluid" />
-                                    {val.model_year}
+                                    {val.fuel_type}
                                 </li>
                                 <li>
                                     <img src={SettingIcon} className="img-fluid" />
@@ -183,7 +183,7 @@ class CarList extends Component {
                             <div className="row">
                                 <div className="col-7"> 
                                     <h4>
-                                        {val.price} <span>/ HOUR&nbsp;</span>
+                                    ₹{val.price}<span>/Hour&nbsp;</span>
                                     </h4></div>
                                 <div className="col-5">
                                 <Link
@@ -191,7 +191,7 @@ class CarList extends Component {
                                     to="/car-detail"
                                     className="btn btn-outline-danger"
                                 >
-                                    Rent
+                                    Book
                                 </Link>
                                 </div>
                             </div>

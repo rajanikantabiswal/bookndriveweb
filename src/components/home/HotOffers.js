@@ -140,12 +140,12 @@ class HotOffers extends Component {
 
         const SettingsSlider = {
             dots: true,
-            arrows: false,
-            speed: 2000,
+            arrows: true,  // Enable arrows
+            speed: 1000,
             slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed: 3000,
             
             responsive: [
                 {
@@ -178,7 +178,32 @@ class HotOffers extends Component {
                     },
                 },
             ],
+            
         };
+        
+        // Custom Previous Arrow Component
+        function CustomPrevArrow(props) {
+            const { className, style, onClick } = props;
+            return (
+                <div
+                    className={`${className} custom-prev-arrow`}
+                    style={{ ...style, display: "block", background: "gray" }}
+                    onClick={onClick}
+                />
+            );
+        }
+        
+        // Custom Next Arrow Component
+        function CustomNextArrow(props) {
+            const { className, style, onClick } = props;
+            return (
+                <div
+                    className={`${className} custom-next-arrow`}
+                    style={{ ...style, display: "block", background: "gray" }}
+                    onClick={onClick}
+                />
+            );
+        }
         const listItems = this.state.carArray.map((val, key) => {
 
             let booking_status = val.booking_status;
@@ -229,7 +254,7 @@ class HotOffers extends Component {
                                 </li>
                                 <li>
                                     <img src={OilTypelIcon} className="img-fluid" />
-                                    {val.model_year}
+                                    {val.fuel_type}
                                 </li>
                                 <li>
                                     <img src={SettingIcon} className="img-fluid" />
@@ -254,7 +279,7 @@ class HotOffers extends Component {
                             <div className="row">
                                 <div className="col-6"> 
                                     <h4>
-                                        {val.price} <span>/ HOUR&nbsp;</span>
+                                    ₹{val.price}<span>/Hour&nbsp;</span>
                                     </h4></div>
                                 <div className="col-6">
                                 {/* <Link
