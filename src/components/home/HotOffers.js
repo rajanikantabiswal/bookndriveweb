@@ -11,8 +11,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Settings from "react-multi-date-picker/plugins/settings";
 import SettingIcon from "../../img/setting-cog.svg";
-import OilTypelIcon from "../../img/hybrid-car.svg";
+import OilTypeIcon from "../../img/hybrid-car.svg";
 import RoadIcon from "../../img/road.svg";
+import MilageIcon from "../../img/milage.png";
 
 function NavigateWrapper() {
     
@@ -139,12 +140,12 @@ class HotOffers extends Component {
 
         const SettingsSlider = {
             dots: true,
-            arrows: false,
-            speed: 2000,
+            arrows: true,  // Enable arrows
+            speed: 1000,
             slidesToShow: 4,
-            slidesToScroll: 4,
+            slidesToScroll: 1,
             autoplay: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed: 3000,
             
             responsive: [
                 {
@@ -177,7 +178,32 @@ class HotOffers extends Component {
                     },
                 },
             ],
+            
         };
+        
+        // Custom Previous Arrow Component
+        function CustomPrevArrow(props) {
+            const { className, style, onClick } = props;
+            return (
+                <div
+                    className={`${className} custom-prev-arrow`}
+                    style={{ ...style, display: "block", background: "gray" }}
+                    onClick={onClick}
+                />
+            );
+        }
+        
+        // Custom Next Arrow Component
+        function CustomNextArrow(props) {
+            const { className, style, onClick } = props;
+            return (
+                <div
+                    className={`${className} custom-next-arrow`}
+                    style={{ ...style, display: "block", background: "gray" }}
+                    onClick={onClick}
+                />
+            );
+        }
         const listItems = this.state.carArray.map((val, key) => {
 
             let booking_status = val.booking_status;
@@ -220,23 +246,20 @@ class HotOffers extends Component {
                                 <h3>{val.car_name}&nbsp;{val.model_name}&nbsp;{val.variant_name}</h3>
                             </Link>
                             
-                            <ul className="fw-bold">
-                                <li>
-                                    <img src={RoadIcon} className="img-fluid" />
-                                    {val.avrage} 
-                                    
-                                </li>
-                                <li>
-                                    <img src={OilTypelIcon} className="img-fluid" />
-                                    {val.model_year}
-                                </li>
-                                <li>
-                                    <img src={SettingIcon} className="img-fluid" />
-                                     
-                                     {val.transmission_type}
-                                </li>
-                               
-                            </ul>
+                            <div className="row g-3">
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={MilageIcon} className="img-fluid me-2" width={"40"} alt="Mileage" />
+                                    <span>{val.avrage}</span>
+                                </div>
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={OilTypeIcon} className="img-fluid me-2" width={"40"} alt="Fuel Type" />
+                                    <span>{val.fuel_type}</span>
+                                </div>
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={SettingIcon} className="img-fluid me-2" width={"40"} alt="Transmission" />
+                                    <span>{val.transmission_type}</span>
+                                </div>
+                            </div>
                             <div className="feature-box">
                                 <ul className="car-detail-list">
                                     <li>Audio input</li>
@@ -253,7 +276,7 @@ class HotOffers extends Component {
                             <div className="row">
                                 <div className="col-6"> 
                                     <h4>
-                                        {val.price} <span>/ HOUR&nbsp;</span>
+                                    ₹{val.price}<span>/Hour&nbsp;</span>
                                     </h4></div>
                                 <div className="col-6">
                                 {/* <Link
@@ -263,7 +286,7 @@ class HotOffers extends Component {
                                 >
                                     Rent
                                 </Link> */}
-                                 <a href="#MainSearch" className="btn btn-outline-danger p-2 scrollto"> Book Car</a>
+                                 <a href="#MainSearch" className="btn btn-outline-danger px-4 py-2 scrollto"> Book</a>
                                 
                                 </div>
                             </div>

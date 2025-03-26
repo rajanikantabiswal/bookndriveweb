@@ -648,9 +648,10 @@ class VendorAddCar extends Component {
                                 onChange={this.handleChange}
                                 className="form-control"
                              >
-                              <option value="Desel">Desel</option>
+                              <option value="">Select</option>
                               <option value="Petrol">Petrol</option>
-                              <option value="CNG">CNG</option>
+                              <option value="Diesel">Diesel</option>
+                              <option value="EV">EV</option>
                               </select>
                           </Col>
                           <Col md={2}>
@@ -779,7 +780,7 @@ class VendorAddCar extends Component {
                         </Col>
                         <Col md={4}>
                         <Form.Control type="file" accept="image/*" name="file2" onChange={this.handleChange} ref={this.owner_book1}  />
-                        <a href={'http://127.0.0.1:8000/public/'+this.state.puc_file}  target="_blank"><img  src={'http://127.0.0.1:8000/public/'+this.state.puc_file} width='60'/></a>
+                        <a href={'http://127.0.0.1:8000/'+this.state.puc_file}  target="_blank"><img  src={'http://127.0.0.1:8000/'+this.state.puc_file} width='60'/></a>
                         </Col>
                          
                           <Col md={2}>
@@ -787,7 +788,7 @@ class VendorAddCar extends Component {
                                 </Col>
                                 <Col md={4}>
                                 <Form.Control type="file" accept="image/*"   name="file3" onChange={this.handleChange}  ref={this.owner_book2}  />
-                                <a href={'http://127.0.0.1:8000/public/'+this.state.insu_file}  target="_blank"><img  src={'http://127.0.0.1:8000/public/'+this.state.insu_file} width='60'/></a>
+                                <a href={'http://127.0.0.1:8000/'+this.state.insu_file}  target="_blank"><img  src={'http://127.0.0.1:8000/'+this.state.insu_file} width='60'/></a>
                                 </Col>
                           </Row>
                        </Form.Group>
@@ -801,7 +802,7 @@ class VendorAddCar extends Component {
                         </Col>
                         <Col md={4}>
                           <Form.Control type="file" accept="image/*" name="file" onChange={this.handleChange} ref={this.car_image}  />
-                          <a href={'http://127.0.0.1:8000/public/'+this.state.car_image}  target="_blank"><img  src={'http://127.0.0.1:8000/public/'+this.state.car_image} width='60'/></a>
+                          <a href={'http://127.0.0.1:8000/'+this.state.car_image}  target="_blank"><img  src={'http://127.0.0.1:8000/'+this.state.car_image} width='60'/></a>
                         </Col>
                          
 
@@ -810,7 +811,7 @@ class VendorAddCar extends Component {
                                 </Col>
                                 <Col md={4}>
                                 <Form.Control type="file" accept="image/*" name="file1" onChange={this.handleChange} ref={this.owner_book}  />
-                                <a href={'http://127.0.0.1:8000/public/'+this.state.owner_book}  target="_blank"><img  src={'http://127.0.0.1:8000/public/'+this.state.owner_book} width='60'/></a>
+                                <a href={'http://127.0.0.1:8000/'+this.state.owner_book}  target="_blank"><img  src={'http://127.0.0.1:8000/'+this.state.owner_book} width='60'/></a>
                                 </Col>
                           </Row>
                        </Form.Group>

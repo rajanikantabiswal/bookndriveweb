@@ -708,7 +708,7 @@ initiatePayment = async () => {
                            
                            <div className="col-lg-7">
                             <div className="car-booking-image">
-                                <img src={'http://127.0.0.1:8000/public/'+val.image} className="border-0" alt="car"/>
+                                <img src={'http://127.0.0.1:8000/'+val.image} className="border-0" alt="car"/>
                             
                             </div>
                          

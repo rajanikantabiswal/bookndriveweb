@@ -90,7 +90,7 @@ class CarDetail extends Component {
             return (
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="car-booking-image"><img src={'http://127.0.0.1:8000/public/'+val.car_image} alt="car"/></div>
+                        <div class="car-booking-image"><img src={'http://127.0.0.1:8000/'+val.car_image} alt="car"/></div>
                     </div>
                     <div class="col-lg-6">
                         
