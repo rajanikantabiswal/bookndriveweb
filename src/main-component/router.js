@@ -100,6 +100,7 @@ import Psuccess from "./Psuccess";
 import Pexits from "./Pexits";
 import Pinvalid from "./Pinvalid";
 import Passbook from "./Passbook";
+import OtpVerification from "./OtpVerification";
 
 
 // import AuthUser from "../components/AuthUser";
@@ -129,7 +130,8 @@ const AllRoute = () => {
                             <Route path='/car-detail' element={<CarDetail />} />
                             <Route path='/car-booking'  element={<CarBooking />} />
                             <Route path='/login'  element={<LoginPage />} />
-                            <Route path='/otp' element={<OtpPage />} />
+                            {/* <Route path='/otp' element={<OtpPage />} /> */}
+                            <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
                             <Route path='/booking-list'  element={<BookingList />} />
 
@@ -219,7 +221,8 @@ const AllRoute = () => {
                             <Route path='/car-detail' element={<CarDetail />} />
                             <Route path='/car-booking'  element={<CarBooking />} />
                             <Route path='/login'  element={<LoginPage />} />
-                            <Route path='/otp' element={<OtpPage />} />
+                            {/* <Route path='/otp' element={<OtpPage />} /> */}
+                            <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
                             <Route path='/booking-list'  element={<BookingList />} />
                             <Route path='/cancel-order'  element={<CancelOrder />} />
@@ -273,7 +276,8 @@ const AllRoute = () => {
                             <Route path='/car-detail' element={<CarDetail />} />
                             <Route path='/car-booking'  element={<CarBooking />} />
                             <Route path='/login'  element={<LoginPage />} />
-                            <Route path='/otp' element={<OtpPage />} />
+                            {/* <Route path='/otp' element={<OtpPage />} /> */}
+                            <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
                             <Route path='/my-booking-list'  element={<BookingLists />} />
                             <Route path='/verification'  element={<Verification />} />
@@ -309,7 +313,8 @@ const AllRoute = () => {
                             <Route path='/car-detail' element={<CarDetail />} />
                             <Route path='/car-booking'  element={<CarBooking />} />
                             <Route path='/login'  element={<LoginPage />} />
-                            <Route path='/otp' element={<OtpPage />} />
+                            {/* <Route path='/otp' element={<OtpPage />} /> */}
+                            <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
                             <Route path='/booking-list'  element={<BookingList1 />} />
                             <Route path='/invoice-print'  element={<InvoicePrint />} />
@@ -349,7 +354,8 @@ const AllRoute = () => {
                         <Route path='/car-detail' element={<CarDetail />} />
                         <Route path='/car-booking'  element={<CarBooking />} />
                         <Route path='/login'  element={<LoginPage />} />
-                        <Route path='/otp' element={<OtpPage />} />
+                        {/* <Route path='/otp' element={<OtpPage />} /> */}
+                        <Route path='/otp' element={<OtpVerification />} />
                         <Route path='/otps' element={<OtpPages />} />
                         <Route path="*" element={<Homepage />} />
                         <Route path='/register'  element={<Register />} />

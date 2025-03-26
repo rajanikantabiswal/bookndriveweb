@@ -44,9 +44,6 @@ const OtpPage = () => {
                 const main_url = role === 3 ? '/home' : '/dashboard'
                 const url= booking_applay === 0 ? main_url : '/car-booking'
 
-                
-
-
                 localStorage.removeItem('booking_applay');
                 window.location.replace(url);
 
