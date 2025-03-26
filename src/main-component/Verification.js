@@ -136,9 +136,9 @@ class Verification extends Component {
     let bts4;
     let bts5;
     let bts9;
-    let bts6='http://127.0.0.1:8000/public/'+this.state.license;
-    let bts7='http://127.0.0.1:8000/public/'+this.state.idcard;
-    let bts8='http://127.0.0.1:8000/public/'+this.state.photo;
+    let bts6='http://127.0.0.1:8000/'+this.state.license;
+    let bts7='http://127.0.0.1:8000/'+this.state.idcard;
+    let bts8='http://127.0.0.1:8000/'+this.state.photo;
 
    
     if (this.state.profile === 0) {

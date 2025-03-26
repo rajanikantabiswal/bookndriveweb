@@ -1838,41 +1838,31 @@ body .text-theme{
     z-index: -1;
 }
 
-.promo-box-left {
-    position: relative;
-    z-index: 1;
-    padding-top: 70px;
-    padding-bottom: 50px;
+.become-a-host-area{
+    background: url("img/become_a_host.webp");
+    background-size: cover;
+    min-height: 40vh;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+@media screen and (max-width: 1080px) {
+    .become-a-host-area{
+        background: #000000;
+    }
+    
+}
+
+@media screen and (min-width: 1080px) {
+    .promo-box-left img{
+        display: none;
+    }
+}
+
+
 
 .promo-box-right {
     padding: 72px 0
-}
-
-.promo-box-left:after {
-    position: absolute;
-    background: #ec3323 none repeat scroll 0 0;
-    content: "";
-    top: 0;
-    right: 55%;
-    width: 2030px;
-    height: 100%;
-    -webkit-transform: skewX(45deg);
-    transform: skewX(45deg);
-    z-index: -1;
-}
-
-.promo-box-left:before {
-    position: absolute;
-    background: #fff none repeat scroll 0 0;
-    content: "";
-    top: 0;
-    right: 43%;
-    width: 70px;
-    height: 100%;
-    -webkit-transform: skewX(45deg);
-    transform: skewX(45deg);
-    z-index: -1;
 }
 
 .promo-box-right h3 {
@@ -1887,6 +1877,14 @@ body .text-theme{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     line-height: 50px;
+}
+
+@media screen and (max-width: 480px) {
+    .promo-box-right h3{
+        font-size: 22px;
+        line-height: 35px;
+    }
+    
 }
 
 

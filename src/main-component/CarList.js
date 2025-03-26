@@ -7,7 +7,7 @@ import FindCar from "../components/home/findcars";
 import { Link } from "react-router-dom";
 import Faq from "../components/home/Faq";
 import SettingIcon from "../img/setting-cog.svg";
-import OilTypelIcon from "../img/hybrid-car.svg";
+import OilTypeIcon from "../img/hybrid-car.svg";
 import RoadIcon from "../img/road.svg";
 import MilageIcon from "../img/milage.png";
 
@@ -31,7 +31,8 @@ class CarList extends Component {
         this.state = {
             carArray: [],
             carArray1: [],
-            isOpenSidebar: false
+            isOpenSidebar: false,
+            selectedDateRange: null
         };
         this.imagestore = this.imagestore.bind(this);
         this.imagestore1 = this.imagestore1.bind(this);
@@ -40,15 +41,55 @@ class CarList extends Component {
 
     toggleSidebar = () => {
         this.setState({ isOpenSidebar: !this.state.isOpenSidebar });
-      };
+    };
 
     componentDidMount() {
         this.imagestore();
         this.imagestore1();
+        // Get the selected date range from localStorage
+        const selectedDate = localStorage.getItem("date");
+        this.setState({ selectedDateRange: selectedDate });
+    }
+
+    // Calculate total hours between two dates
+    calculateTotalHours(dateRangeString) {
+        if (!dateRangeString) return 0;
+
+        // Split the date range string
+        const [fromDateStr, toDateStr] = dateRangeString.split(' - ');
+
+        // Create Date objects
+        const fromDate = new Date(this.parseDateString(fromDateStr));
+        const toDate = new Date(this.parseDateString(toDateStr));
+
+        // Calculate time difference in hours
+        const timeDiff = Math.abs(toDate - fromDate);
+        const totalHours = timeDiff / (1000 * 60 * 60);
+
+        return Math.ceil(totalHours);
+    }
+
+    // Helper method to parse date string from local format
+    parseDateString(dateStr) {
+        // Expected format: DD/MM/YYYY H:mm AM/PM
+        const [datePart, timePart] = dateStr.split(' ');
+        const [day, month, year] = datePart.split('/');
+        const [time, period] = timePart.split(' ');
+        const [hours, minutes] = time.split(':');
+
+        // Convert to 24-hour format
+        let convertedHours = parseInt(hours);
+        if (period === 'PM' && convertedHours !== 12) {
+            convertedHours += 12;
+        }
+        if (period === 'AM' && convertedHours === 12) {
+            convertedHours = 0;
+        }
+
+        return `${year}-${month}-${day}T${convertedHours.toString().padStart(2, '0')}:${minutes}:00`;
     }
 
     imagestore() {
-        // const from= localStorage.setItem("from",from);
         const date1 = localStorage.getItem("date");
         let x = 1;
         this.https.post('/vendor_car_list_guest', { token: '', date: date1 }).then((result) => {
@@ -61,9 +102,7 @@ class CarList extends Component {
                 });
             }
         })
-
     }
-
 
     handleClick(id) {
         let x = 1;
@@ -90,34 +129,20 @@ class CarList extends Component {
                 });
             }
         })
-
     }
 
-
-
-
-
-
     render() {
-
         const SubmitHandler = (e) => {
             e.preventDefault();
-            // localStorage.setItem("from",from);
-            // localStorage.setItem("date",date);
         };
 
-
-
         const listItems = this.state.carArray.map((val, key) => {
-
             let booking_status = val.booking_status;
             let suubmitvalue;
             let suubmitvalue1;
             let action;
             if (booking_status === 1) {
-
                 suubmitvalue = { 'display': 'none' }
-
                 suubmitvalue1 = {
                     'text-align': 'center',
                     'background': 'gray none repeat scroll 0 0',
@@ -129,44 +154,42 @@ class CarList extends Component {
                     'transition': 'all 0.4s ease 0s',
                     'display': 'block'
                 }
-
             } else {
-
                 suubmitvalue = { 'display': 'block' }
                 suubmitvalue1 = { 'display': 'none' }
             }
-            
+
+            // Calculate total hours and estimated price
+            const totalHours = this.calculateTotalHours(this.state.selectedDateRange);
+            const estimatedTotal = totalHours * parseFloat(val.price);
 
             return (
                 <Col lg={4}>
-                    <div className="single-offers">
+                    <div className="single-offers px-2">
                         <div className="offer-image">
                             <Link to="/car-booking">
-                                <img src={'http://127.0.0.1:8000/public/' + val.image} alt="offer 1" />
+                                <img src={'http://127.0.0.1:8000/' + val.image} alt="offer 1" />
                             </Link>
                         </div>
-                        <div className="offer-text pt-3">
+                        <div className="offer-text">
                             <Link to="/car-booking">
                                 <h3>{val.car_name}&nbsp;{val.model_name}&nbsp;{val.variant_name}</h3>
                             </Link>
-                            
-                            <ul className="fw-bold">
-                                <li>
-                                    <img src={MilageIcon} className="img-fluid" />
-                                    {val.avrage} 
-                                    
-                                </li>
-                                <li>
-                                    <img src={OilTypelIcon} className="img-fluid" />
-                                    {val.model_year}
-                                </li>
-                                <li>
-                                    <img src={SettingIcon} className="img-fluid" />
-                                     
-                                     {val.transmission_type}
-                                </li>
-                               
-                            </ul>
+
+                            <div className="row g-3">
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={MilageIcon} className="img-fluid me-2" width={"40"} alt="Mileage" />
+                                    <span>{val.avrage}</span>
+                                </div>
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={OilTypeIcon} className="img-fluid me-2" width={"40"} alt="Fuel Type" />
+                                    <span>{val.fuel_type}</span>
+                                </div>
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={SettingIcon} className="img-fluid me-2" width={"40"} alt="Transmission" />
+                                    <span>{val.transmission_type}</span>
+                                </div>
+                            </div>
                             <div className="feature-box">
                                 <ul className="car-detail-list">
                                     <li>Audio input as</li>
@@ -181,21 +204,28 @@ class CarList extends Component {
                                 </ul>
                             </div>
                             <div className="row">
-                                <div className="col-7"> 
+                                <div className="col-7">
                                     <h4>
-                                        {val.price} <span>/ HOUR&nbsp;</span>
-                                    </h4></div>
+                                        ₹{val.price}<span>/Hour&nbsp;</span>
+                                    </h4>
+                                    {this.state.selectedDateRange && (
+                                        <p className="text-muted">
+                                            ₹{estimatedTotal.toFixed(2)}
+                                            <small> ({totalHours} hrs)</small>
+                                        </p>
+                                    )}
+                                </div>
                                 <div className="col-5">
-                                <Link
-                                    onClick={(e) => localStorage.setItem('rent_id', val.id)}
-                                    to="/car-detail"
-                                    className="btn btn-outline-danger"
-                                >
-                                    Rent
-                                </Link>
+                                    <Link
+                                        onClick={(e) => localStorage.setItem('rent_id', val.id)}
+                                        to="/car-detail"
+                                        className="btn btn-outline-danger"
+                                    >
+                                        Book
+                                    </Link>
                                 </div>
                             </div>
-                          
+
                             <div className="offer-action d-none" style={suubmitvalue}>
                                 <Link
                                     onClick={(e) => localStorage.setItem('rent_id', val.id)}
@@ -227,12 +257,10 @@ class CarList extends Component {
                                 </Link>
                             </div>
                         </div>
-                     
                     </div>
                 </Col>
             )
         });
-
 
         const bts = this.state.x === 1 ? '' : listItems
 
@@ -240,23 +268,14 @@ class CarList extends Component {
             return (
                 <li><a onClick={this.handleClick.bind(this, val.id)} >{val.model}<span></span></a></li>
             )
-
         });
-
 
         const d = this.state.carArray1;
         const total = d.lenght;
 
-    
-        
-       
         return (
             <Fragment>
                 <Header />
-                {/* <PageTitle
-            pageTitle="Car List"
-            pagesub="car List"
-        /> */}
                 <section className="rent-drive-breadcromb-area section_70">
                     <Container>
                         <Row>
@@ -264,7 +283,6 @@ class CarList extends Component {
                             <Col md={12}>
                                 <div className="breadcromb-box">
                                     <h3>Car List</h3>
-                                    
                                 </div>
                             </Col>
                         </Row>
@@ -273,18 +291,15 @@ class CarList extends Component {
                 <div>
                     <section className="rent-drive-car-listing section_70">
                         <div className="container">
-                            
-                                <button className={` open-close-sidebar border-danger d-lg-none d-block ${this.state.isOpenSidebar ? 'fixedTop' : ''}`} onClick={this.toggleSidebar}>
-                                    {` ${this.state.isOpenSidebar ? 'CLOSE' : 'FILTER'}`}
-                                </button>
-                     
+                            <button className={` open-close-sidebar border-danger d-lg-none d-block ${this.state.isOpenSidebar ? 'fixedTop' : ''}`} onClick={this.toggleSidebar}>
+                                {` ${this.state.isOpenSidebar ? 'CLOSE' : 'FILTER'}`}
+                            </button>
+
                             <div className="row">
                                 <div className="col-lg-9">
-
                                     <div className="car-listing-right">
                                         <div className="car-grid-list">
                                             <div className="row">
-                                                {/* <FindCar /> */}
                                                 {bts}
                                             </div>
                                         </div>
@@ -292,64 +307,60 @@ class CarList extends Component {
                                 </div>
                                 <div className="col-lg-3">
                                     <div className={`filter-sidebar  ${this.state.isOpenSidebar ? 'mobile-sticky' : 'filter-d'}`}>
-                                   
-
-                                    <div className="car-list-left">
-                                        <div className="sidebar-widget ">
-                                            <div className="box">
-                                                <h3 className="text-uppercase">Booking Time</h3>
-                                               
-												 <FindCar />
-												
+                                        <div className="car-list-left">
+                                            <div className="sidebar-widget ">
+                                                <div className="box">
+                                                    <h3 className="text-uppercase">Booking Time</h3>
+                                                    <FindCar />
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="car-list-left mt-3 ">
-                                        <div className="sidebar-widget">
-                                            <div className="box">
-                                                <h3>All Brands</h3>
+                                        <div className="car-list-left mt-3 ">
+                                            <div className="sidebar-widget">
+                                                <div className="box">
+                                                    <h3>All Brands</h3>
                                                     <ul className="service-menu p-0">
                                                         <li className="active"><a onClick={this.handleClick.bind(this, 0)}>All Brands<span>{total}</span></a></li>
                                                         {listItems1}
                                                     </ul>
                                                 </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="car-list-left mt-3">
-                                        <div className="sidebar-widget">
-                                            <div className="box">
-                                                <h3>Seats</h3>
+                                        <div className="car-list-left mt-3">
+                                            <div className="sidebar-widget">
+                                                <div className="box">
+                                                    <h3>Seats</h3>
                                                     <ul className="service-menu p-0">
                                                         <li><a>4 Seater</a></li>
                                                         <li><a>5 Seater</a></li>
                                                         <li><a>7 Seater</a></li>
                                                     </ul>
                                                 </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="car-list-left mt-3">
-                                        <div className="sidebar-widget">
-                                            <div className="box">
-                                                <h3>Transmission</h3>
+                                        <div className="car-list-left mt-3">
+                                            <div className="sidebar-widget">
+                                                <div className="box">
+                                                    <h3>Transmission</h3>
                                                     <ul className="service-menu p-0">
                                                         <li><a>Automatic</a></li>
                                                         <li><a>Manual</a></li>
                                                     </ul>
                                                 </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="car-list-left mt-3">
-                                        <div className="sidebar-widget">
-                                            <div className="box">
-                                                <h3>Car Type</h3>
+                                        <div className="car-list-left mt-3">
+                                            <div className="sidebar-widget">
+                                                <div className="box">
+                                                    <h3>Car Type</h3>
                                                     <ul className="service-menu p-0">
                                                         <li><a>Hatchback</a></li>
                                                         <li><a>Scedan</a></li>
                                                         <li><a>CSUV</a></li>
                                                     </ul>
                                                 </div>
+                                            </div>
                                         </div>
-                                    </div>
                                     </div>
                                 </div>
                             </div>
@@ -362,7 +373,5 @@ class CarList extends Component {
         );
     }
 }
-
-
 
 export default CarList;

@@ -120,7 +120,7 @@ class VehicalList extends Component {
         return (
             <tr key={key}>
                 <td data-label="S.No.">{i}.</td>
-                <td data-label="Car Image" style={{display:'none'}} ><img alt={val.car_name} src={'http://127.0.0.1:8000/public/images/'+val.image} width='60'/> </td>
+                <td data-label="Car Image" style={{display:'none'}} ><img alt={val.car_name} src={'http://127.0.0.1:8000/images/'+val.image} width='60'/> </td>
                 <td data-label="Make Name">{val.car_name}</td>
                 <td data-label="Addon">{val.created_at}</td>
                 <td data-label="Action">
