@@ -123,7 +123,7 @@ class VendorListCar extends Component {
                 <td data-label="Average">{val.avrage}</td>
                 <td data-label="Color">{val.color}</td>
                 <td data-label="Price">{val.price}</td>
-                <td data-label="Owner Book"><img alt={val.car_name} src={'http://127.0.0.1:8000/public/'+val.owner_book} width='60'/> </td>
+                <td data-label="Owner Book"><img alt={val.car_name} src={'http://127.0.0.1:8000/'+val.owner_book} width='60'/> </td>
                 <td data-label="Addon">{val.created_at}</td>
                 <td data-label="Action">
                 <b className={bts} onClick={this.handleClick.bind(this, val.id)} >{title}</b>

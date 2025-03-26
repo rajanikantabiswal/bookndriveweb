@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Settings from "react-multi-date-picker/plugins/settings";
 import SettingIcon from "../../img/setting-cog.svg";
-import OilTypelIcon from "../../img/hybrid-car.svg";
+import OilTypeIcon from "../../img/hybrid-car.svg";
 import RoadIcon from "../../img/road.svg";
 import MilageIcon from "../../img/milage.png";
 
@@ -246,23 +246,20 @@ class HotOffers extends Component {
                                 <h3>{val.car_name}&nbsp;{val.model_name}&nbsp;{val.variant_name}</h3>
                             </Link>
                             
-                            <ul className="fw-bold">
-                                <li>
-                                    <img src={MilageIcon} className="img-fluid" />
-                                    {val.avrage} 
-                                    
-                                </li>
-                                <li>
-                                    <img src={OilTypelIcon} className="img-fluid" />
-                                    {val.fuel_type}
-                                </li>
-                                <li>
-                                    <img src={SettingIcon} className="img-fluid" />
-                                     
-                                     {val.transmission_type}
-                                </li>
-                               
-                            </ul>
+                            <div className="row g-3">
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={MilageIcon} className="img-fluid me-2" width={"40"} alt="Mileage" />
+                                    <span>{val.avrage}</span>
+                                </div>
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={OilTypeIcon} className="img-fluid me-2" width={"40"} alt="Fuel Type" />
+                                    <span>{val.fuel_type}</span>
+                                </div>
+                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                    <img src={SettingIcon} className="img-fluid me-2" width={"40"} alt="Transmission" />
+                                    <span>{val.transmission_type}</span>
+                                </div>
+                            </div>
                             <div className="feature-box">
                                 <ul className="car-detail-list">
                                     <li>Audio input</li>

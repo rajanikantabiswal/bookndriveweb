@@ -136,7 +136,7 @@ const ProductReviews = () => {
             ))}
           </div>
           <div className="text-center mt-3 mb-3 mb-md-0">
-            <button type="button" className="btn btn-danger">Google Review</button>
+            <a href='https://g.page/r/CeX8eQgqeNyYEBE/review' target="_blank"><button type="button" className="btn btn-danger">Google Review</button></a>
           </div>
         </div>
         

@@ -97,7 +97,7 @@ class LoginPage extends Component {
         }
         
        
-        const url = 'http://127.0.0.1:8000/public/capcha.php?text='+string;
+        const url = 'http://127.0.0.1:8000/capcha.php?text='+string;
         this.setState({
             capchaimg: url,
             capchatext:string
@@ -121,7 +121,7 @@ class LoginPage extends Component {
         }
         
        
-        const url = 'http://127.0.0.1:8000/public/capcha.php?text='+string;
+        const url = 'http://127.0.0.1:8000/capcha.php?text='+string;
         this.setState({
             capchaimg: url,
             capchatext:string
