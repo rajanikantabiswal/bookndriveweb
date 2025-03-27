@@ -620,214 +620,217 @@ button.rent-drive-btn-theme:hover {
     z-index: 1;
     padding: 10px 0;
 }
-.logo-brand{
+
+.logo-brand {
     display: flex;
     align-items: center;
     width: 100%;
-    
+
 }
-.logo-text{
+
+.logo-text {
     font-size: 1.8rem;
     font-weight: 600;
     line-height: 0;
     color: #000;
 }
+
 /*--------------------------------------------------------------
 # Desktop Navigation 
 --------------------------------------------------------------*/
 @media (min-width: 1280px) {
     .navbar {
-      padding: 0;
-      position: relative;
+        padding: 0;
+        position: relative;
     }
-  
+
     .navbar ul {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      list-style: none;
-      align-items: center;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        align-items: center;
     }
-  
+
     .navbar li {
-      position: relative;
+        position: relative;
     }
-  
+
     .navbar>ul>li {
-      white-space: nowrap;
+        white-space: nowrap;
     }
-  
+
     .navbar a,
     .navbar a:focus {
-      display: flex;
-      align-items: center;
-      padding: 14px 20px;
-      font-family: inherit;
-      font-size: 16px;
-      font-weight: 400;
-      color: #020202;
-      white-space: nowrap;
-      transition: 0.3s;
-      position: relative;
+        display: flex;
+        align-items: center;
+        padding: 14px 20px;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: 400;
+        color: #020202;
+        white-space: nowrap;
+        transition: 0.3s;
+        position: relative;
     }
-  
+
     .navbar a svg,
     .navbar a:focus svg {
-      font-size: 12px;
-      line-height: 0;
-      margin-left: 5px;
-      margin-top: 5px;
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
+        margin-top: 5px;
     }
-  
+
     .navbar>ul>li>a:before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: var(--color-primary);
-      visibility: hidden;
-      transition: all 0.3s ease-in-out 0s;
-      transform: scaleX(0);
-      transition: all 0.3s ease-in-out 0s;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-primary);
+        visibility: hidden;
+        transition: all 0.3s ease-in-out 0s;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
     }
-  
+
     .navbar a:hover:before,
     .navbar li:hover>a:before,
     .navbar .active:before {
-      visibility: visible;
-      transform: scaleX(0.7);
+        visibility: visible;
+        transform: scaleX(0.7);
     }
-  
+
     .navbar a:hover,
     .navbar .active,
     .navbar .active:focus,
     .navbar li:hover>a {
-      color: #f00010;
+        color: #f00010;
     }
-  
+
     .navbar .dropdown a:hover:before,
     .navbar .dropdown:hover>a:before,
     .navbar .dropdown .active:before {
-      visibility: hidden;
+        visibility: hidden;
     }
-  
+
     .navbar .dropdown a:hover,
     .navbar .dropdown .active,
     .navbar .dropdown .active:focus,
     .navbar .dropdown:hover>a {
-      color: #f00010;
-      background: #ffffff;
+        color: #f00010;
+        background: #ffffff;
     }
-  
+
     .navbar .dropdown ul {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 100%;
-      margin: 0;
-      padding: 0 0 10px 0;
-      z-index: 99;
-      opacity: 0;
-      visibility: hidden;
-      background: #fbfbfb;
-      transition: 0.3s;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        margin: 0;
+        padding: 0 0 10px 0;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        background: #fbfbfb;
+        transition: 0.3s;
     }
-  
+
     .navbar .dropdown ul li {
-      min-width: 200px;
+        min-width: 200px;
     }
-  
+
     .navbar .dropdown ul a {
-      padding: 10px 20px;
-      font-size: 15px;
-      text-transform: none;
-      font-weight: 400;
-      color: #020202;
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: none;
+        font-weight: 400;
+        color: #020202;
     }
-  
+
     .navbar .dropdown ul a i {
-      font-size: 12px;
+        font-size: 12px;
     }
-  
+
     .navbar .dropdown ul a:hover,
     .navbar .dropdown ul .active,
     .navbar .dropdown ul .active:hover,
     .navbar .dropdown ul li:hover>a {
-      color: #f00010;
-      
+        color: #f00010;
+
     }
-  
+
     .navbar .dropdown:hover>ul {
-      opacity: 1;
-      visibility: visible;
+        opacity: 1;
+        visibility: visible;
     }
-  
+
     .navbar .megamenu {
-      position: static;
+        position: static;
     }
-  
+
     .navbar .megamenu ul {
-      right: 0;
-      padding: 10px;
-      display: flex;
+        right: 0;
+        padding: 10px;
+        display: flex;
     }
-  
+
     .navbar .megamenu ul li {
-      flex: 1;
+        flex: 1;
     }
-  
+
     .navbar .megamenu ul li a,
     .navbar .megamenu ul li:hover>a {
-      color: #f00010;
-      background: none;
+        color: #f00010;
+        background: none;
     }
-  
+
     .navbar .megamenu ul li a:hover,
     .navbar .megamenu ul li .active,
     .navbar .megamenu ul li .active:hover {
-      color: #ffffff;
+        color: #ffffff;
     }
-  
+
     .navbar .dropdown .dropdown ul {
-      top: 0;
-      left: calc(100% - 30px);
-      visibility: hidden;
+        top: 0;
+        left: calc(100% - 30px);
+        visibility: hidden;
     }
-  
+
     .navbar .dropdown .dropdown:hover>ul {
-      opacity: 1;
-      top: 0;
-      left: 100%;
-      visibility: visible;
+        opacity: 1;
+        top: 0;
+        left: 100%;
+        visibility: visible;
     }
-  }
-  
-  @media (min-width: 1280px) and (max-width: 1366px) {
+}
+
+@media (min-width: 1280px) and (max-width: 1366px) {
     .navbar .dropdown .dropdown ul {
-      left: -90%;
+        left: -90%;
     }
-  
+
     .navbar .dropdown .dropdown:hover>ul {
-      left: -100%;
+        left: -100%;
     }
-  }
-  
-  /*--------------------------------------------------------------
+}
+
+/*--------------------------------------------------------------
   # Mobile Navigation
   --------------------------------------------------------------*/
-  @media (max-width: 1279px) {
+@media (max-width: 1279px) {
     .navbar {
-      position: fixed;
-    
-      left: 0;
-      width: 100%;
-      bottom: 0;
-      transition: 0.3s;
-      z-index: 9997;
+        position: fixed;
+
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        transition: 0.3s;
+        z-index: 9997;
     }
-  
+
     .navbar ul {
         z-index: 999;
         padding: 30px;
@@ -837,86 +840,88 @@ button.rent-drive-btn-theme:hover {
         right: 0;
         left: 0;
     }
-  
+
     .navbar a,
     .navbar a:focus {
-       display: flex;
-      align-items: center;
-      padding: 8px 0;
-      font-size: 16px;
-      font-weight: 500;
-      color: #020202;
-      white-space: nowrap;
-      transition: 0.3s; 
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: #020202;
+        white-space: nowrap;
+        transition: 0.3s;
     }
-  
+
     .navbar a i,
     .navbar a:focus i {
-      font-size: 12px;
-      line-height: 0;
-      margin-left: 5px;
+        font-size: 12px;
+        line-height: 0;
+        margin-left: 5px;
     }
-  
+
     .navbar a:hover,
     .navbar .active,
     .navbar .active:focus,
     .navbar li:hover>a {
-      color: #f00010;
+        color: #f00010;
     }
-  
+
     .navbar .dropdown ul,
     .navbar .dropdown .dropdown ul {
-      position: static;
-      display: none;
-      padding: 10px 0;
-      margin: 10px 20px;
-      transition: all 0.5s ease-in-out;
-      border: 1px solid rgba(var(--color-secondary-light-rgb), 0.3);
+        position: static;
+        display: none;
+        padding: 10px 0;
+        margin: 10px 20px;
+        transition: all 0.5s ease-in-out;
+        border: 1px solid rgba(var(--color-secondary-light-rgb), 0.3);
     }
-  
+
     .navbar .dropdown>.dropdown-active,
     .navbar .dropdown .dropdown>.dropdown-active {
-      display: block;
+        display: block;
     }
-  
+
     .mobile-nav-toggle {
-      display: block !important;
-      color: var(--color-secondary);
-      font-size: 28px;
-      cursor: pointer;
-      line-height: 0;
-      transition: 0.5s;
-      position: fixed;
-      top: 20px;
-      z-index: 9999;
-      right: 20px;
+        display: block !important;
+        color: var(--color-secondary);
+        font-size: 28px;
+        cursor: pointer;
+        line-height: 0;
+        transition: 0.5s;
+        position: fixed;
+        top: 20px;
+        z-index: 9999;
+        right: 20px;
     }
-  
+
     .mobile-nav-toggle.bi-x {
-      color: #ffffff;
+        color: #ffffff;
     }
-  
+
     .mobile-nav-active {
-      overflow: hidden;
-      z-index: 9995;
-      position: relative;
+        overflow: hidden;
+        z-index: 9995;
+        position: relative;
     }
-  
+
     .mobile-nav-active .navbar {
-      left: 0;
+        left: 0;
     }
-  
+
     .mobile-nav-active .navbar:before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(var(--color-secondary-rgb), 0.8);
-      z-index: 9996;
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(var(--color-secondary-rgb), 0.8);
+        z-index: 9996;
     }
-  }
-.logo-text span{
-color: #ec3323;
 }
+
+.logo-text span {
+    color: #ec3323;
+}
+
 /* .header-top-left:before {
     background: #ec3323 none repeat scroll 0 0;
     content: "";
@@ -1053,7 +1058,7 @@ color: #ec3323;
 
 .header-promo-info {
     color: #555;
-    font-size:20px;
+    font-size: 20px;
 }
 
 .header-promo-info h3 {
@@ -1097,7 +1102,7 @@ color: #ec3323;
     margin-right: 2px
 }
 
-.header-action a:hover{
+.header-action a:hover {
     color: #fff;
 }
 
@@ -1394,10 +1399,15 @@ color: #ec3323;
 }
 
 .rent-drive-main-slide {
+    background: url(img/home_banner.webp) no-repeat fixed 0 0/cover;
     background-color: #eee;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     min-height: 90vh;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 100px;
 }
 
 .slider-content-holder {
@@ -1414,7 +1424,7 @@ color: #ec3323;
     display: table;
     height: 100%;
     width: 100%;
-    
+
 }
 
 .rent-drive-caption-cell {
@@ -1509,24 +1519,29 @@ color: #ec3323;
     z-index: 999;
     box-shadow: 3px 0 29px rgba(0, 0, 0, 0.26);
 }
-.find-box .form-control{
+
+.find-box .form-control {
     height: 45px;
     background: #e8e7e8;
 }
-.find-box label{
+
+.find-box label {
     margin-bottom: 7px;
     font-weight: 700;
     color: #282828;
     font-size: 14px;
 }
+
 .find-text {
     margin-top: 32px;
 }
-body .btn-theme{
+
+body .btn-theme {
     background: #f00010;
     color: #fff;
 }
-body .text-theme{
+
+body .text-theme {
     color: #f00010 !important;
 }
 
@@ -2004,9 +2019,11 @@ body .text-theme{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
 }
+
 .single-offers .offer-text h3 {
     min-height: 40px;
 }
+
 .offer-text h4 {
     color: #444;
     font-size: 18px;
@@ -2041,15 +2058,19 @@ body .text-theme{
     font-size: 14px;
     width: 47%;
 }
-.offer-action a.offer-btn-2{
+
+.offer-action a.offer-btn-2 {
     color: #363636;
 }
-.offer-action a.offer-btn-2:hover{
+
+.offer-action a.offer-btn-2:hover {
     color: #ffffff;
 }
+
 .offer-action:hover a {
     color: #ffffff;
-    }
+}
+
 .offer-action:after {
     position: absolute;
     content: "";
@@ -2086,26 +2107,30 @@ body .text-theme{
     margin-right: 5px;
     color: #ec3323
 }
-.feature-box{
+
+.feature-box {
     border-top: 1px solid #333;
     padding-top: 10px;
 }
-.single-offers .car-detail-list{
+
+.single-offers .car-detail-list {
     display: block;
     text-align: left;
     padding-left: 15px;
     height: 130px;
 }
-.single-offers .car-detail-list li{
+
+.single-offers .car-detail-list li {
     display: inline-block;
     width: 50%;
     margin: 0;
     padding: 0;
     font-size: 12px;
     position: relative;
-    
+
 }
-.single-offers .car-detail-list li::before{
+
+.single-offers .car-detail-list li::before {
     content: "\2713";
     position: absolute;
     left: -15px;
@@ -2162,7 +2187,8 @@ body .text-theme{
     opacity: 0.1;
     filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
 }
-.testi-after-box-left{
+
+.testi-after-box-left {
     position: relative;
     overflow: hidden;
 }
@@ -2965,32 +2991,41 @@ body .text-theme{
 .sidebar-widget {
     margin-bottom: 30px
 }
-.sidebar-widget .box{
+
+.sidebar-widget .box {
     background: #f4f4f5 none repeat scroll 0 0;
     padding: 30px;
 }
-.filter-sidebar{
+
+.filter-sidebar {
     position: relative;
 }
+
 .mobile-sticky {
     display: none;
 }
+
 .filter-sidebar.mobile-sticky {
     display: block;
 }
-.filter-d{
+
+.filter-d {
     display: block;
 }
+
 @media screen and (max-width: 992px) {
-    .rent-drive-find-area{
+    .rent-drive-find-area {
         margin-top: -30px;
     }
+
     .rent-drive-find-area .cont {
         padding-top: 80px;
     }
- .filter-d{
-    display: none;
- }
+
+    .filter-d {
+        display: none;
+    }
+
     .mobile-sticky {
         position: fixed;
         left: 0;
@@ -3002,7 +3037,8 @@ body .text-theme{
         padding: 40px 0px;
         overflow-y: auto;
     }
-    .open-close-sidebar{
+
+    .open-close-sidebar {
         position: sticky;
         top: 10px;
         background: #fff;
@@ -3014,13 +3050,16 @@ body .text-theme{
         padding: 7px;
         color: #f00010;
     }
+
     .open-close-sidebar.fixedTop {
         position: fixed;
     }
-    .sidebar-widget .box{
+
+    .sidebar-widget .box {
         padding: 10px;
     }
 }
+
 .sidebar-widget:last-child {
     margin-bottom: 0
 }
@@ -3047,7 +3086,8 @@ body .text-theme{
     font-size: 14px;
     font-weight: 500;
 }
-.service-menu li a:hover{
+
+.service-menu li a:hover {
     cursor: pointer;
 }
 
@@ -4808,18 +4848,23 @@ input[type="radio"]:checked~label {
     background: #0fb065;
     border-radius: 50%;
     opacity: .8;
-   
-  }
-  .whatsapp-sticky.left {
+
+}
+
+.whatsapp-sticky.left {
     left: 20px !important;
     bottom: 70px !important;
-  }
-  .whatsapp-sticky:hover{opacity: 1;color: #fff;}
-  
-  .highlights-offers ul li{
+}
+
+.whatsapp-sticky:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+.highlights-offers ul li {
     position: relative;
     margin-top: 15px;
-  }
+}
 
 /*================================================
 33 - CONTACT PAGE CSS
@@ -4937,12 +4982,14 @@ input[type="radio"]:checked~label {
     color: #fff;
     border: 1px solid #ec3323;
 }
-.shadow-none:focus{
+
+.shadow-none:focus {
     box-shadow: none !important;
     outline: none;
 }
+
 /* tab responsive */
-@media only screen and (max-width: 992px)  {
+@media only screen and (max-width: 992px) {
 
     .navbar-toggler .icon-bar {
         background-color: red;
@@ -4951,60 +4998,69 @@ input[type="radio"]:checked~label {
         width: 26px;
         transition: all 0.2s;
         margin-bottom: 4px;
-      }
-      
-      .navbar-toggler .bottom-bar {
+    }
+
+    .navbar-toggler .bottom-bar {
         transform: rotate(-45deg);
         transform-origin: 10% 90%;
-      }
-      
-      .navbar-toggler.collapsed .top-bar {
+    }
+
+    .navbar-toggler.collapsed .top-bar {
         transform: rotate(0);
-      }
-      
-      .navbar-toggler.collapsed .middle-bar {
+    }
+
+    .navbar-toggler.collapsed .middle-bar {
         opacity: 1;
-      }
-      
-      .navbar-toggler.collapsed .bottom-bar {
+    }
+
+    .navbar-toggler.collapsed .bottom-bar {
         transform: rotate(0);
-      }
-      
-      .navbar-toggler .top-bar {
+    }
+
+    .navbar-toggler .top-bar {
         transform: rotate(45deg);
         transform-origin: 10% 10%;
-      }
-      
-      .navbar-toggler .middle-bar {
+    }
+
+    .navbar-toggler .middle-bar {
         opacity: 0;
-      }
-     
-      .navbar-toggler.collapsed  .icon-bar,  .menu-icon {
+    }
+
+    .navbar-toggler.collapsed .icon-bar,
+    .menu-icon {
         opacity: 0;
         position: absolute;
         right: 10px;
         top: -5px;
-        transition: all .3s;;
-      }
-      .navbar-toggler.collapsed .menu-icon{
+        transition: all .3s;
+        ;
+    }
+
+    .navbar-toggler.collapsed .menu-icon {
         opacity: 1;
         height: auto;
-      }
+    }
+
     .navbar .dropdown:hover>ul {
         opacity: 1;
         display: block;
         visibility: visible;
-      }
-      .navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active{
+    }
+
+    .navbar-toggler,
+    .navbar-toggler:focus,
+    .navbar-toggler:active {
         border: 0 !important;
         box-shadow: none !important;
         outline: 0 !important;
-      }
+    }
 }
-@media only screen and (max-width: 480px)  {
-    .single-offers .car-detail-list{
+
+@media only screen and (max-width: 480px) {
+    .single-offers .car-detail-list {
         height: auto;
     }
+
     .login-boxs {
         width: 100%;
         padding: 30px 15px;
@@ -5028,12 +5084,12 @@ input[type="radio"]:checked~label {
     }
 
     .header-top-left:before {
-       display:none;
+        display: none;
     }
 
-   
 
-      .header-top-right>a {
+
+    .header-top-right>a {
         color: #eee;
         text-transform: capitalize;
         text-align: center;
@@ -5048,11 +5104,420 @@ input[type="radio"]:checked~label {
         width: 125px;
         margin-top: 22px;
     }
-    .header-top-left{
+
+    .header-top-left {
         background-color: transparent;
     }
-    .logo-text{display: none;}
-    
+
+    .logo-text {
+        display: none;
+    }
+
+    .rent-drive-main-slide {
+        background: url(img/home_banner_mobile.webp) no-repeat fixed 0 0/cover;
+        min-height: 60vh;
+        background-size: cover;
+    }
 }
 
+/* Overlay container */
+.range-picker-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
 
+/* Dark backdrop */
+.range-picker-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
+/* Overlay content */
+.range-picker-content {
+    position: relative;
+    background: #fff;
+    width: 90%;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 10000;
+    font-family: sans-serif;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Header row */
+.range-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.range-picker-dates {
+    font-weight: 600;
+}
+
+.range-picker-reset {
+    background: none;
+    border: none;
+    color: #028858;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Calendars */
+.range-picker-calendars {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.range-picker-time-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Time sliders */
+.range-picker-sliders {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+.slider-label {
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.slider-value {
+    margin-top: 5px;
+}
+
+/* Continue button */
+.range-picker-continue {
+    display: block;
+    margin: 0 auto;
+    background-color: #028858;
+    color: #fff;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.calendar-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.calendar-months {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+.calendar-month-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 0 10px;
+}
+
+/* Calendar styling */
+.calendar-wrapper {
+    width: 48%;
+}
+
+/* Custom styling for react-calendar */
+.react-calendar {
+    border: none;
+    width: 100%;
+    font-family: sans-serif;
+}
+
+.react-calendar__month-view {
+    background-color: #f2f9f6;
+    border-radius: 8px;
+    padding: 8px 0;
+  }
+
+.react-calendar__month-view__weekdays__weekday {
+    text-align: center;
+    /* font-weight: bold; */
+    text-decoration: none;
+    /* font-size: 0.8em; */
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none !important;
+    font-weight: bold;
+  }
+
+.react-calendar__month-view__days__day {
+    padding: 8px;
+    text-align: center;
+}
+
+.react-calendar__month-view__days__day abbr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+  }
+
+.react-calendar__tile--active,
+.selected-date {
+    background: #028858 !important;
+    color: white !important;
+    /* border-radius: 50%; */
+    position: relative;
+}
+
+.react-calendar__tile--active abbr,
+.selected-date abbr {
+  background: #028858;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.range-date {
+    background-color: #e6f4ee !important;
+    /* color: #333; */
+}
+
+.react-calendar__tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 !important;
+  }
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+    background-color: #e6f4ee;
+    border-radius: 50%;
+}
+.react-calendar__tile--rangeStart abbr,
+.react-calendar__tile--rangeEnd abbr {
+  background: #028858;
+  color: white;
+  border-radius: 50%;
+}
+/* Time slider adjustments */
+.slider-with-value {
+    width: 100%;
+    padding: 0 15px;
+    position: relative;
+}
+
+.slider-value {
+    text-align: center;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #028858;
+}
+
+/* Reset button styling */
+.range-picker-reset {
+    color: #028858;
+    font-weight: bold;
+}
+
+/* Continue button styling */
+.range-picker-continue {
+    background-color: #028858;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* Header with date range */
+.range-picker-dates {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.date-icon {
+    margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .react-calendar__tile {
+      height: 36px;
+    }
+    
+    .react-calendar__tile abbr,
+    .react-calendar__tile--active abbr,
+    .selected-date abbr {
+      width: 28px;
+      height: 28px;
+      font-size: 0.9em;
+    }
+    
+    /* Fix month display for mobile */
+    .calendar-months {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    .calendar-month-title {
+      font-size: 0.9rem;
+      text-align: center;
+      flex: 1;
+    }
+    
+    /* Better spacing for mobile */
+    .range-picker-calendars {
+      margin: 10px 0;
+    }
+    
+    /* Fix weekday header spacing */
+    .react-calendar__month-view__weekdays {
+      margin-bottom: 5px;
+    }
+  }
+  
+  /* Extra small devices */
+  @media (max-width: 375px) {
+    .react-calendar__tile {
+      height: 32px;
+    }
+    
+    .react-calendar__tile abbr,
+    .react-calendar__tile--active abbr,
+    .selected-date abbr {
+      width: 24px;
+      height: 24px;
+      font-size: 0.8em;
+    }
+    
+    .calendar-month-title {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* Fix for month selection colors */
+  .react-calendar__month-view__days {
+    background-color: transparent;
+  }
+  
+  /* Clean styling for today's date */
+  .react-calendar__tile--now {
+    background-color: rgba(2, 136, 88, 0.1) !important;
+  }
+  
+  .react-calendar__tile--now abbr {
+    font-weight: bold;
+  }
+  
+  /* Style for disabled dates */
+  .react-calendar__tile:disabled,
+  .react-calendar__tile--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Fix month selection highlight design */
+  .react-calendar__navigation__label {
+    background: none !important;
+    color: #333 !important;
+    font-weight: bold;
+  }
+  
+  /* Better looking navigation arrows */
+  .calendar-nav-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+  }
+  
+  .calendar-nav-btn:hover {
+    background-color: rgba(2, 136, 88, 0.1);
+  }
+
+  /* Styling for disabled previous dates */
+.react-calendar__tile--disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    color: #aaa !important;
+    text-decoration: line-through;
+  }
+  
+  /* Ensure disabled dates can't be selected or focused */
+  .react-calendar__tile:disabled,
+  .react-calendar__tile--disabled {
+    cursor: not-allowed !important;
+    background-color: #f5f5f5 !important;
+  }
+  
+  /* Increase the visual distinction of disabled dates */
+  .react-calendar__tile--disabled abbr {
+    color: #bbb;
+  }
+  
+  /* Remove hover effects from disabled dates */
+  .react-calendar__tile:disabled:hover,
+  .react-calendar__tile--disabled:hover {
+    background-color: #f5f5f5 !important;
+  }
+  
+  /* Ensure the disabled status takes precedence over other states */
+  .react-calendar__tile--disabled.range-date,
+  .react-calendar__tile--disabled.selected-date {
+    background-color: #f5f5f5 !important;
+    color: #bbb !important;
+  }
+  
+  .react-calendar__tile--disabled.selected-date abbr {
+    background-color: #f5f5f5 !important;
+    color: #bbb !important;
+  }

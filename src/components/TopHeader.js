@@ -29,9 +29,9 @@ class TopHeader extends Component {
           <FaUserAlt className="me-2" /> Dashboard{" "}
         </Link>
       );
-      if (userData.role === 1) {
-      logBtn2='Welcome   '+userData.name+'    ';
-      } 
+      // if (userData.role === 1) {
+      logBtn2='Welcome,   '+userData.name.split(' ')[0]+'    ';
+      //} 
   
     return (
       <>
