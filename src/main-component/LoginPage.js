@@ -66,6 +66,7 @@ class LoginPage extends Component {
               localStorage.setItem('userData', result.data.otp);
               localStorage.setItem('mobile_number', this.state.mobile_number);
               const { navigate } = this.props;
+              
               navigate('../otp');
           } else {
 

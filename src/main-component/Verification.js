@@ -212,7 +212,7 @@ class Verification extends Component {
             <div  class="top-section">
                 <div  class="hero-image"><img  src={verify_icon} alt="verification-icon" /></div>
                 <div  class="heading">Verify Profile Now</div>
-                <div  class="sub-heading">Only few steps left to complete. Upload remaining documents to continue using BookNDrive.</div>
+                <div  class="sub-heading">Only few steps left to complete. Upload remaining documents to continue using bookndrive.</div>
             </div>
             {msg}
             <Form onSubmit={this.handleSubmit} id="account_form">
