@@ -38,7 +38,7 @@ class FindCar extends Component {
       start: start.toDate(),
       end: end.toDate(),
       city: "",
-      from: "",
+      from: localStorage.getItem("from") || "",
       date: "",
       date1: "",
       carArray: [],
@@ -156,6 +156,7 @@ class FindCar extends Component {
     
     const { navigate } = this.props;
     navigate("../car-list");
+    window.location.replace('../car-list');
   }
 
   /* ===== Custom Range Picker Methods ===== */
@@ -355,7 +356,7 @@ class FindCar extends Component {
     ));
 
     // Format displayed date range text if available.
-    let displayRange = "";
+    let displayRange = localStorage.getItem("date") || "";
     if (selectedDate && selectedDate2) {
       displayRange =
         this.formatDateTime(selectedDate, selectedDate.getHours()) +
