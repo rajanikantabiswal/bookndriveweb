@@ -76,7 +76,7 @@ const OtpVerification = () => {
     signInWithPhoneNumber(auth, phoneNumber, verifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
-        console.log('OTP Sent Successfully');
+        alert('OTP Sent Successfully');
       })
       .catch((error) => {
         console.error('OTP Send Error:', error);
@@ -93,7 +93,7 @@ const OtpVerification = () => {
             alert('Please enter a phone number');
             break;
           default:
-            alert('Failed to send OTP. Please try again.');
+            console.log('Failed to send OTP. Please try again.');
         }
       });
   }
@@ -205,7 +205,6 @@ const OtpVerification = () => {
                   </p>
 
                 </form>
-                y
               </div>
             </Col>
           </Row>
