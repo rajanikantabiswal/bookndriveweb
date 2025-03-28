@@ -204,7 +204,7 @@ class HotOffers extends Component {
                 />
             );
         }
-        const listItems = this.state.carArray.map((val, key) => {
+        const listItems = this.state.carArray.slice(0, 8).map((val, key) => {
 
             let booking_status = val.booking_status;
             let suubmitvalue;
@@ -234,8 +234,7 @@ class HotOffers extends Component {
 
             return (
                 <>
-                    <div className="slide">
-                    <div className="single-offers px-2">
+                    <div className="single-offers px-2 col-md-4 col-lg-3">
                         <div className="offer-image">
                             <Link to="/car-booking">
                                 <img src={'http://127.0.0.1:8000/' + val.image} alt="offer 1" />
@@ -270,7 +269,6 @@ class HotOffers extends Component {
                                     <li>Budget Car</li>
                                     <li>Chilled AC</li>
                                     <li>Automatic</li>
-                                    <li>Free cancellation</li>
                                 </ul>
                             </div>
                             <div className="row">
@@ -324,11 +322,6 @@ class HotOffers extends Component {
                         </div>
                      
                     </div>
-                    </div>
-                    
-                    
-                
-               
                 </>
             )
         });
@@ -346,25 +339,9 @@ class HotOffers extends Component {
                             </div>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md={12}>
-                            <div className="offer-tabs" >
-                                <Tabs
-                                    defaultActiveKey="all"
-                                    transition={true}
-                                    id="uncontrolled-tab-example"
-                                >
-                                    {/* All Brands Start */}
-                                    <Tab eventKey="all" title="">
-                                        <Slider {...SettingsSlider}>
-                                            {listItems}
-                                        </Slider>
-                                    </Tab>
-                                    {/* All Brands End */}
-                                </Tabs>
-                            </div>
-                        </Col>
-                    </Row>
+                    <div className="row">
+                        {listItems}
+                    </div>
                 </Container>
             </section>
         );

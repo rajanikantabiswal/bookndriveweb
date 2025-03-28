@@ -169,7 +169,6 @@ const CarList = () => {
                                 <li>Budget Car</li>
                                 <li>Chilled AC</li>
                                 <li>Automatic</li>
-                                <li>Free cancellation</li>
                             </ul>
                         </div>
                         <div className="row">
