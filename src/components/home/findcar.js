@@ -47,8 +47,8 @@ class FindCar extends Component {
       // Temporary values for the overlay.
       tempStartDate: start.toDate(),
       tempEndDate: end.toDate(),
-      tempStartTime: 18, // 6:00 PM
-      tempEndTime: 12,   // 12:00 PM
+      tempStartTime: this.getStartTime(), // 6:00 PM
+      tempEndTime: this.getEndTime(),   // 12:00 PM
       // Calendar view state (we keep both states; nextMonth is computed separately for display)
       currentMonth: new Date(2025, 2, 1), // March 2025
       nextMonth: new Date(2025, 3, 1),      // April 2025
@@ -80,6 +80,25 @@ class FindCar extends Component {
     });
   }
 
+  getStartTime = () => {
+    const now = new Date();
+    let minutes = now.getMinutes();
+    let hour = now.getHours();
+  
+    // If current minutes > 0, move to the next hour
+    let startHour = minutes > 0 ? hour + 1 : hour;
+    
+    // If the next hour is 24 (midnight), reset to 0
+    return startHour % 24;
+  };
+  
+  getEndTime = () => {
+    let startHour = this.getStartTime(); // Get the valid start time
+    let endHour = (startHour + 12) % 24; // 12-hour gap
+  
+    return endHour;
+  };
+
   imagestore() {
     this.https.post("/city_list", { token: this.token, type: 1 }).then((result) => {
       let status = result.data.status;
@@ -110,6 +129,7 @@ class FindCar extends Component {
       MySwal.fire("Please Select a Date Range");
       return;
     }
+
     // Format the range for storage (using your formatting logic)
     const formattedStart = new Date(selectedDate).toLocaleString("en-GB", {
       day: "2-digit",
@@ -119,6 +139,7 @@ class FindCar extends Component {
       minute: "2-digit",
       hour12: true,
     });
+    
     const formattedEnd = new Date(selectedDate2).toLocaleString("en-GB", {
       day: "2-digit",
       month: "2-digit",
@@ -190,7 +211,16 @@ class FindCar extends Component {
   }
 
   onSliderChangeStart(value) {
+    const today = new Date();
+    const selectedDate = this.state.tempStartDate;
+    if (selectedDate.getDate() === today.getDate()) {
+      if (value < this.getStartTime()) {
+        this.setState({ tempStartTime: this.getStartTime() });
+        return;
+      }
+    }
     this.setState({ tempStartTime: value });
+    
   }
 
   onSliderChangeEnd(value) {

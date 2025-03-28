@@ -3,7 +3,7 @@ import Header from "../components/header";
 import Header2 from "../components/header2";
 import Footer from "../components/Footer";
 import PageTitle from "../components/PageTitle";
-import FindCar from "../components/home/findcars";
+import FindCar from "../components/home/findcar";
 import { Link } from "react-router-dom";
 import Faq from "../components/home/Faq";
 import SettingIcon from "../img/setting-cog.svg";
@@ -52,15 +52,10 @@ class CarList extends Component {
     }
 
     // Calculate total hours between two dates
-    calculateTotalHours(dateRangeString) {
-        if (!dateRangeString) return 0;
+    calculateTotalHours() {
 
-        // Split the date range string
-        const [fromDateStr, toDateStr] = dateRangeString.split(' - ');
-
-        // Create Date objects
-        const fromDate = new Date(this.parseDateString(fromDateStr));
-        const toDate = new Date(this.parseDateString(toDateStr));
+        const fromDate = new Date(localStorage.getItem("formattedDate"));
+        const toDate = new Date(localStorage.getItem("formattedDate2"));
 
         // Calculate time difference in hours
         const timeDiff = Math.abs(toDate - fromDate);
@@ -160,7 +155,7 @@ class CarList extends Component {
             }
 
             // Calculate total hours and estimated price
-            const totalHours = this.calculateTotalHours(this.state.selectedDateRange);
+            const totalHours = this.calculateTotalHours();
             const estimatedTotal = totalHours * parseFloat(val.price);
 
             return (
@@ -177,15 +172,15 @@ class CarList extends Component {
                             </Link>
 
                             <div className="row g-3">
-                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                <div className="col-4 d-flex flex-column align-items-center">
                                     <img src={MilageIcon} className="img-fluid me-2" width={"40"} alt="Mileage" />
                                     <span>{val.avrage}</span>
                                 </div>
-                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                <div className="col-4 d-flex flex-column align-items-center">
                                     <img src={OilTypeIcon} className="img-fluid me-2" width={"40"} alt="Fuel Type" />
                                     <span>{val.fuel_type}</span>
                                 </div>
-                                <div className="col-4 d-flex flex-column align-items-center"> 
+                                <div className="col-4 d-flex flex-column align-items-center">
                                     <img src={SettingIcon} className="img-fluid me-2" width={"40"} alt="Transmission" />
                                     <span>{val.transmission_type}</span>
                                 </div>
@@ -295,8 +290,13 @@ class CarList extends Component {
                                 {` ${this.state.isOpenSidebar ? 'CLOSE' : 'FILTER'}`}
                             </button>
 
+                            <div>
+                                <FindCar />
+                            </div>
+
                             <div className="row">
                                 <div className="col-lg-9">
+
                                     <div className="car-listing-right">
                                         <div className="car-grid-list">
                                             <div className="row">
@@ -307,14 +307,7 @@ class CarList extends Component {
                                 </div>
                                 <div className="col-lg-3">
                                     <div className={`filter-sidebar  ${this.state.isOpenSidebar ? 'mobile-sticky' : 'filter-d'}`}>
-                                        <div className="car-list-left">
-                                            <div className="sidebar-widget ">
-                                                <div className="box">
-                                                    <h3 className="text-uppercase">Booking Time</h3>
-                                                    <FindCar />
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div className="car-list-left mt-3 ">
                                             <div className="sidebar-widget">
                                                 <div className="box">
