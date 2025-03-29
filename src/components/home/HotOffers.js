@@ -18,7 +18,6 @@ import MilageIcon from "../../img/milage.png";
 function NavigateWrapper() {
     
     const navigate = useNavigate();
-
     return <HotOffers navigate={navigate} />;
    
 }
@@ -261,14 +260,9 @@ class HotOffers extends Component {
                             </div>
                             <div className="feature-box">
                                 <ul className="car-detail-list">
-                                    <li>Audio input</li>
-                                    <li>Bluetooth</li>
-                                    <li>Heated seats</li>
-                                    <li>Pay at Pick-Up</li>
-                                    <li>Budget Car</li>
-                                    <li>Budget Car</li>
-                                    <li>Chilled AC</li>
-                                    <li>Automatic</li>
+                                {val.car_features ? val.car_features.split(',').map((feature, index) => (
+                                    <li key={index}>{feature}</li>
+                                )):''}
                                 </ul>
                             </div>
                             <div className="row">

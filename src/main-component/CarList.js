@@ -161,14 +161,9 @@ const CarList = () => {
                         </div>
                         <div className="feature-box">
                             <ul className="car-detail-list">
-                                <li>Audio input as</li>
-                                <li>Bluetooth</li>
-                                <li>Heated seats</li>
-                                <li>Pay at Pick-Up</li>
-                                <li>Budget Car</li>
-                                <li>Budget Car</li>
-                                <li>Chilled AC</li>
-                                <li>Automatic</li>
+                                {val.car_features ? val.car_features.split(',').map((feature, index) => (
+                                    <li key={index}>{feature}</li>
+                                )):''}
                             </ul>
                         </div>
                         <div className="row">
