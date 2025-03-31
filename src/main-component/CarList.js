@@ -181,7 +181,7 @@ const CarList = () => {
                             <div className="col-5">
                                 <Link
                                     onClick={(e) => localStorage.setItem('rent_id', val.id)}
-                                    to="/car-detail"
+                                    to="/car-booking"
                                     className="btn btn-outline-danger"
                                 >
                                     Book
