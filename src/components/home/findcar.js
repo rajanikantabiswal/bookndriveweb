@@ -387,7 +387,7 @@ class FindCar extends Component {
           <Container className="g-0">
             <Row className="m-0">
               <Col md={12}>
-                <div className="find-box rounded">
+                <div className="find-box">
                   <Row className="align-items-center">
                     <Col md={12}>
                       <div className="find-form">

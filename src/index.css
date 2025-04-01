@@ -1501,11 +1501,12 @@ button.rent-drive-btn-theme:hover {
 
 .find-box {
   /* background: #fff url(img/find-box-bg.png) no-repeat scroll 0 0; */
-  background: #ececec;
+  background: #ffffff;
   padding: 18px 18px 6px 18px;
   position: relative;
   z-index: 999;
-  box-shadow: 3px 0 29px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 .find-box .form-control {
@@ -5454,6 +5455,22 @@ input[type="radio"]:checked ~ label {
   background: #ec3323;
   color: #fff;
 }
+
+.all-cars-btn{
+  background: #ec3323;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.all-cars-btn:hover {
+  background: #fff;
+  color: #ec3323;
+}
+/*===============================================================================================*/
 
 
 

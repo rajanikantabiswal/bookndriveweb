@@ -260,6 +260,11 @@ class HotOffers extends Component {
                     <div className="car-listing">
                         {listItems}
                     </div>
+                    <div className="text-center mt-5">
+                        <Link to="/car-list" className="btn all-cars-btn rounded-pill px-4 py-2">
+                            View All Cars
+                        </Link>
+                    </div>
                 </div>
             </section>
             </>

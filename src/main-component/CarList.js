@@ -331,16 +331,16 @@ const CarList = () => {
                 </Container>
             </section>
             <div>
-                <section className="rent-drive-car-listing section_70">
+                <section className="mt-5">
                     <div className="container">
-                        <button
+                        {/* <button
                             className={`open-close-sidebar border-danger d-lg-none d-block ${isOpenSidebar ? 'fixedTop' : ''}`}
                             onClick={toggleSidebar}
                         >
                             {isOpenSidebar ? 'CLOSE' : 'FILTER'}
-                        </button>
+                        </button> */}
 
-                        <div>
+                        <div className="pt-3 px-0 mx-0">
                             <FindCar />
                         </div>
 
