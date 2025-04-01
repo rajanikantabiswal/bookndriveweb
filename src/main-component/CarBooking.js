@@ -19,8 +19,6 @@ import SettingIcon from "../img/setting-cog.svg";
 import OilTypelIcon from "../img/hybrid-car.svg";
 import RoadIcon from "../img/road.svg";
 
-import Payment from "../components/Payment";
-
 //const MySwal = withReactContent(Swal);
 //MySwal.fire(result.data.message);
 import axios from 'axios';
@@ -584,7 +582,7 @@ class CarBooking extends Component {
 
         const options = {
           key: res.razorpay_key, // Your Razorpay API key
-          amount: 100, // Amount in paise
+          amount: res.amount, // Amount in paise
           currency: res.currency,
           name: "BookNDrive",
           description: "Car Booking Payment",
@@ -616,9 +614,9 @@ class CarBooking extends Component {
             }
           },
           prefill: {
-            name: "User Name", // You can prefill this dynamically
-            email: "user@example.com",
-            contact: "9876543210"
+            name: name, // You can prefill this dynamically
+            email: email,
+            contact: mobile_number
           },
           theme: {
             color: "#3399cc"
@@ -1183,9 +1181,6 @@ class CarBooking extends Component {
                               value={this.state.suubmitvalue}
                               onClick={this.handleChangep}
                             />
-
-
-                            <Payment />
 
                             <div>
 

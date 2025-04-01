@@ -16,10 +16,10 @@ import RoadIcon from "../../img/road.svg";
 import MilageIcon from "../../img/milage.png";
 
 function NavigateWrapper() {
-    
+
     const navigate = useNavigate();
     return <HotOffers navigate={navigate} />;
-   
+
 }
 
 class HotOffers extends Component {
@@ -137,72 +137,6 @@ class HotOffers extends Component {
     };
     render() {
 
-        const SettingsSlider = {
-            dots: true,
-            arrows: true,  // Enable arrows
-            speed: 1000,
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        infinite: true,
-                    },
-                },
-                {
-                    breakpoint: 850,
-                    settings: {
-                        slidesToShow: 3,
-                        infinite: true,
-                    },
-                },
-                {
-                    breakpoint: 750,
-                    settings: {
-                        slidesToShow: 2,
-                        infinite: true,
-                    },
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        infinite: true,
-                        centerMode: false,
-                    },
-                },
-            ],
-            
-        };
-        
-        // Custom Previous Arrow Component
-        function CustomPrevArrow(props) {
-            const { className, style, onClick } = props;
-            return (
-                <div
-                    className={`${className} custom-prev-arrow`}
-                    style={{ ...style, display: "block", background: "gray" }}
-                    onClick={onClick}
-                />
-            );
-        }
-        
-        // Custom Next Arrow Component
-        function CustomNextArrow(props) {
-            const { className, style, onClick } = props;
-            return (
-                <div
-                    className={`${className} custom-next-arrow`}
-                    style={{ ...style, display: "block", background: "gray" }}
-                    onClick={onClick}
-                />
-            );
-        }
         const listItems = this.state.carArray.slice(0, 8).map((val, key) => {
 
             let booking_status = val.booking_status;
@@ -233,88 +167,84 @@ class HotOffers extends Component {
 
             return (
                 <>
-                    <div className="single-offers px-2 col-md-4 col-lg-3">
-                        <div className="offer-image">
-                            <Link to="/car-booking">
-                                <img src={'http://127.0.0.1:8000/' + val.image} alt="offer 1" />
+                    <div className="car-card">
+                        {/* Car Image with Badge */}
+                        <div className="position-relative">
+                            <Link to="/car-booking" className="d-block overflow-hidden" style={{ height: "200px" }}>
+                                <img
+                                    src={'http://127.0.0.1:8000/' + val.image}
+                                    alt={`${val.car_name} ${val.model_name}`}
+                                    className="img-fluid w-100 h-100 object-fit-contain"
+                                />
                             </Link>
+                            <span className="price-badge position-absolute badge rounded-pill px-3 py-2 top-0 end-0">
+                                ₹{val.price}<small>/Hour</small>
+                            </span>
                         </div>
-                        <div className="offer-text">
-                            <Link to="/car-booking">
-                                <h3>{val.car_name}&nbsp;{val.model_name}&nbsp;{val.variant_name}</h3>
+
+                        {/* Card Body */}
+                        <div className="card-body p-3">
+                            {/* Car Title */}
+                            <Link to="/car-booking" className="text-decoration-none">
+                                <h5 className="card-title fw-bold text-dark mb-3 text-truncate">
+                                    {val.car_name} {val.model_name} {val.variant_name}
+                                </h5>
                             </Link>
-                            
-                            <div className="row g-3">
-                                <div className="col-4 d-flex flex-column align-items-center"> 
-                                    <img src={MilageIcon} className="img-fluid me-2" width={"40"} alt="Mileage" />
-                                    <span>{val.avrage}</span>
+
+                            {/* Car Specs */}
+                            <div className="row g-0 mb-3 spec-icons border-top border-bottom py-3">
+                                <div className="col-4 text-center border-end">
+                                    <img src={MilageIcon} className="mb-1" width={28} alt="Mileage" />
+                                    <p className="mb-0 small">{val.avrage}</p>
                                 </div>
-                                <div className="col-4 d-flex flex-column align-items-center"> 
-                                    <img src={OilTypeIcon} className="img-fluid me-2" width={"40"} alt="Fuel Type" />
-                                    <span>{val.fuel_type}</span>
+                                <div className="col-4 text-center border-end">
+                                    <img src={OilTypeIcon} className="mb-1" width={28} alt="Fuel Type" />
+                                    <p className="mb-0 small">{val.fuel_type}</p>
                                 </div>
-                                <div className="col-4 d-flex flex-column align-items-center"> 
-                                    <img src={SettingIcon} className="img-fluid me-2" width={"40"} alt="Transmission" />
-                                    <span>{val.transmission_type}</span>
+                                <div className="col-4 text-center">
+                                    <img src={SettingIcon} className="mb-1" width={28} alt="Transmission" />
+                                    <p className="mb-0 small">{val.transmission_type}</p>
                                 </div>
                             </div>
-                            <div className="feature-box">
-                                <ul className="car-detail-list">
-                                {val.car_features ? val.car_features.split(',').map((feature, index) => (
-                                    <li key={index}>{feature}</li>
-                                )):''}
-                                </ul>
-                            </div>
-                            <div className="row">
-                                <div className="col-6"> 
-                                    <h4>
-                                    ₹{val.price}<span>/Hour&nbsp;</span>
-                                    </h4></div>
-                                <div className="col-6">
-                                {/* <Link
-                                    onClick={(e) => localStorage.setItem('rent_id', val.id)}
+
+                            {/* Features */}
+                            {val.car_features && (
+                                <div className="mb-3">
+                                    <div className="d-flex flex-wrap gap-1">
+                                        {val.car_features.split(',').slice(0, 4).map((feature, index) => (
+                                            <span key={index} className="badge bg-light text-dark rounded-pill px-2 py-1">
+                                                <i className="bi bi-check-circle-fill text-success me-1"></i>
+                                                {feature.trim()}
+                                            </span>
+                                        ))}
+                                        {val.car_features.split(',').length > 4 && (
+                                            <span className="badge bg-light text-dark rounded-pill px-2 py-1">
+                                                +{val.car_features.split(',').length - 4} more
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Card Footer */}
+                        <div className="card-footer bg-white border-0 pt-0 pb-3 px-3">
+                            <div className="d-grid gap-2">
+                                <a
+                                    href="#MainSearch"
+                                    className="car-listing-btn"
+                                >
+                                    <i className="bi bi-calendar-check me-2"></i>Book Now
+                                </a>
+                                <Link
                                     to="/car-detail"
-                                    className="btn btn-outline-danger d-none"
-                                >
-                                    Rent
-                                </Link> */}
-                                 <a href="#MainSearch" className="btn btn-outline-danger px-4 py-2 scrollto"> Book</a>
-                                
-                                </div>
-                            </div>
-                          
-                            <div className="offer-action d-none" style={suubmitvalue}>
-                                <Link
                                     onClick={(e) => localStorage.setItem('rent_id', val.id)}
-                                    to="/car-booking"
-                                    className="offer-btn-1"
+                                    className="btn btn-outline-secondary rounded-pill"
                                 >
-                                    Book Car
-                                </Link>
-                                <Link
-                                    onClick={(e) => localStorage.setItem('rent_id', val.id)}
-                                    to="/car-detail"
-                                    className="offer-btn-2"
-                                >
-                                    details
-                                </Link>
-                            </div>
-                            <div className="offer-action" style={suubmitvalue1}>
-                                <Link
-                                    className="offer-btn-1"
-                                >
-                                    Booked
-                                </Link>
-                                <Link
-                                    onClick={(e) => localStorage.setItem('rent_id', val.id)}
-                                    to="/car-detail"
-                                    className="offer-btn-2"
-                                >
-                                    details
+                                    View Details
                                 </Link>
                             </div>
                         </div>
-                     
                     </div>
                 </>
             )
@@ -323,21 +253,16 @@ class HotOffers extends Component {
 
 
         return (
-            <section className="rent-drive-offers-area section_70">
-                <Container>
-                    <Row>
-                        <Col md={12}>
-                            <div className="site-heading">
-                                {/* <h4>Come With</h4> */}
-                                <h2>Find Your Perfect Drive!</h2>
-                            </div>
-                        </Col>
-                    </Row>
-                    <div className="row">
+
+            <>
+            <section>
+                <div className="container py-5">
+                    <div className="car-listing">
                         {listItems}
                     </div>
-                </Container>
+                </div>
             </section>
+            </>
         );
     }
 }
