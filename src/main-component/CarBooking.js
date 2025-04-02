@@ -324,6 +324,14 @@ class CarBooking extends Component {
     this.imagestore();
     this.imagestore1();
     this.imagestore2();
+
+    const script = document.createElement('script');
+    script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+    script.async = true;
+    script.onload = () => {
+      console.log('Razorpay SDK loaded successfully');
+    };
+    document.body.appendChild(script);
   }
 
   imagestore() {
@@ -508,6 +516,8 @@ class CarBooking extends Component {
 
   };
 
+
+
   handleSubmit(event) {
     event.preventDefault();
     var name = event.target.name.value;
@@ -623,8 +633,12 @@ class CarBooking extends Component {
           }
         };
 
-        const rzp1 = new window.Razorpay(options);
-        rzp1.open();
+        if (window.Razorpay) {
+          const rzp1 = new window.Razorpay(options);
+          rzp1.open();
+        } else {
+          console.error("Razorpay SDK failed to load.");
+        }
 
       } else {
 
