@@ -26,6 +26,7 @@
     "jquery": "^3.7.0",
     "openssl": "^2.0.0",
     "phonepesdk": "^0.3.18",
+    "razorpay": "^2.9.6",
     "rc-slider": "^11.1.8",
     "react": "^18.2.0",
     "react-advanced-datetimerange-picker": "^1.0.14",
