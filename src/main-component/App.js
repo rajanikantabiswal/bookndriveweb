@@ -2,6 +2,7 @@ import React, { Fragment ,useEffect} from "react";
 import AllRoute from "./router";
 import "./App.css";
 import favicon from '../img/Bookndrive_logo.png';
+import StickyContactButton from "../components/StickyContactButton";
 
 const App = () => {
   
@@ -19,6 +20,7 @@ const App = () => {
     <Fragment>
       
       <AllRoute />
+      <StickyContactButton />
     </Fragment>
   );
 };

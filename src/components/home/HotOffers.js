@@ -185,6 +185,7 @@ class HotOffers extends Component {
                         {/* Card Body */}
                         <div className="card-body p-3">
                             {/* Car Title */}
+                            <span className="-top-3">Estimated Price: ₹{val.price}<small>/Hour</small></span>
                             <Link to="/car-booking" className="text-decoration-none">
                                 <h5 className="card-title fw-bold text-dark mb-3 text-truncate">
                                     {val.car_name} {val.model_name} {val.variant_name}
