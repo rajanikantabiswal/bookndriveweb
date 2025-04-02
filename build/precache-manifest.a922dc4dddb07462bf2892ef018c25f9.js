@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3f4d25eb4f25bff9f4ad",
-    "url": "/static/css/main.3b7f0093.chunk.css"
+    "revision": "455e5a8d8f952bbbf74c",
+    "url": "/static/css/main.abcbacc8.chunk.css"
   },
   {
-    "revision": "3f4d25eb4f25bff9f4ad",
-    "url": "/static/js/main.95e367de.chunk.js"
+    "revision": "455e5a8d8f952bbbf74c",
+    "url": "/static/js/main.30226387.chunk.js"
   },
   {
     "revision": "f7ccb321014e101b6bdc",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/static/media/setting-cog.d8bb2027.svg"
   },
   {
-    "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
-    "url": "/static/media/slick.b7c9e1e4.woff"
+    "revision": "f97e3bbf73254b0112091d0192f17aec",
+    "url": "/static/media/slick.f97e3bbf.svg"
   },
   {
     "revision": "d41f55a78e6f49a5512878df1737e58a",
@@ -52,8 +52,8 @@ self.__precacheManifest = [
     "url": "/static/media/slick.ced611da.eot"
   },
   {
-    "revision": "f97e3bbf73254b0112091d0192f17aec",
-    "url": "/static/media/slick.f97e3bbf.svg"
+    "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
+    "url": "/static/media/slick.b7c9e1e4.woff"
   },
   {
     "revision": "883234ed5af0bd96bdae68658d23278e",
@@ -148,8 +148,8 @@ self.__precacheManifest = [
     "url": "/static/media/car-detail.0eb30e17.jpg"
   },
   {
-    "revision": "435cb4417cd75784917ae8ebf65706bc",
-    "url": "/static/media/home_banner_mobile.435cb441.webp"
+    "revision": "229d0e73c7e1de90a679721b51d98a69",
+    "url": "/static/media/slider-2.229d0e73.jpg"
   },
   {
     "revision": "ab6a48dcd62dc1b5845c06a4c230ee9f",
@@ -164,11 +164,11 @@ self.__precacheManifest = [
     "url": "/static/media/find-box-bg.f6eaf215.png"
   },
   {
-    "revision": "229d0e73c7e1de90a679721b51d98a69",
-    "url": "/static/media/slider-2.229d0e73.jpg"
+    "revision": "435cb4417cd75784917ae8ebf65706bc",
+    "url": "/static/media/home_banner_mobile.435cb441.webp"
   },
   {
-    "revision": "1063abbe198a698a369d82b699f7dcf3",
+    "revision": "98bb22991fd1714063361eb2b22d1693",
     "url": "/index.html"
   }
 ];
