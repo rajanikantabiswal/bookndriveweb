@@ -27,9 +27,10 @@ class FindCar extends Component {
     let now = new Date();
     // Use existing default date range (start and end) values
     let start = moment(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0));
-    let end = moment(start).add(4, "days").subtract(1, "seconds");
+    let end = moment(start).add(2, "days").subtract(1, "seconds");
 
     this.state = {
+      isMobile: window.innerWidth < 768,
       messages: "",
       // These two properties are used by other pages.
       selectedDate: null,
@@ -78,24 +79,29 @@ class FindCar extends Component {
     $(document).ready(function () {
       // Existing jQuery snippets if needed...
     });
+    window.addEventListener("resize", this.handleResize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   }
 
   getStartTime = () => {
     const now = new Date();
     let minutes = now.getMinutes();
     let hour = now.getHours();
-  
+
     // If current minutes > 0, move to the next hour
     let startHour = minutes > 0 ? hour + 1 : hour;
-    
+
     // If the next hour is 24 (midnight), reset to 0
     return startHour % 24;
   };
-  
+
   getEndTime = () => {
     let startHour = this.getStartTime(); // Get the valid start time
     let endHour = (startHour + 12) % 24; // 12-hour gap
-  
+
     return endHour;
   };
 
@@ -139,7 +145,7 @@ class FindCar extends Component {
       minute: "2-digit",
       hour12: true,
     });
-    
+
     const formattedEnd = new Date(selectedDate2).toLocaleString("en-GB", {
       day: "2-digit",
       month: "2-digit",
@@ -153,7 +159,7 @@ class FindCar extends Component {
     localStorage.setItem("date", dateRange);
     localStorage.setItem("formattedDate", selectedDate);
     localStorage.setItem("formattedDate2", selectedDate2)
-    
+
     const { navigate } = this.props;
     navigate("../car-list");
     window.location.replace('../car-list');
@@ -161,11 +167,15 @@ class FindCar extends Component {
 
   /* ===== Custom Range Picker Methods ===== */
   toggleRangePicker() {
+    const today = new Date();
+    const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+    const nextMonthStart = new Date(today.getFullYear(), today.getMonth() + 1, 1);
+
     this.setState((prevState) => ({
       showRangePicker: !prevState.showRangePicker,
-      // Reset the calendar view if needed (keeping currentMonth and nextMonth)
-      currentMonth: new Date(2025, 2, 1),
-      nextMonth: new Date(2025, 3, 1),
+      // Reset the calendar view to current month and next month
+      currentMonth: currentMonthStart,
+      nextMonth: nextMonthStart,
     }));
   }
 
@@ -173,7 +183,7 @@ class FindCar extends Component {
   resetRangePicker() {
     const now = new Date();
     const start = moment(new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0, 0));
-    const end = moment(start).add(4, "days").subtract(1, "seconds");
+    const end = moment(start).add(2, "days").subtract(1, "seconds");
 
     this.setState({
       tempStartDate: start.toDate(),
@@ -221,7 +231,7 @@ class FindCar extends Component {
       }
     }
     this.setState({ tempStartTime: value });
-    
+
   }
 
   onSliderChangeEnd(value) {
@@ -238,6 +248,17 @@ class FindCar extends Component {
   // Navigation for calendar months.
   handlePrevMonth() {
     this.setState((prevState) => {
+      const today = new Date();
+      const currentMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+
+      // Don't allow navigating before the current month
+      if (prevState.currentMonth <= currentMonthStart) {
+        return {
+          currentMonth: currentMonthStart,
+          nextMonth: new Date(currentMonthStart.getFullYear(), currentMonthStart.getMonth() + 1, 1)
+        };
+      }
+
       const newCurrentMonth = new Date(prevState.currentMonth);
       newCurrentMonth.setMonth(newCurrentMonth.getMonth() - 1);
       return {
@@ -341,6 +362,7 @@ class FindCar extends Component {
       tempEndTime,
       currentMonth,
       nextMonth,
+      isMobile
     } = this.state;
 
     let msg = "";
@@ -487,10 +509,13 @@ class FindCar extends Component {
                   <button className="calendar-nav-btn" onClick={this.handlePrevMonth}>
                     <span>‹</span>
                   </button>
-                  <div className="calendar-months">
-                    <span className="calendar-month-title">{currentMonthName}</span>
-                    <span className="calendar-month-title">{nextMonthName}</span>
-                  </div>
+                  
+                    <div className="calendar-months">
+                      <span className="calendar-month-title">{currentMonthName}</span>
+                      {!isMobile && (
+                      <span className="calendar-month-title">{nextMonthName}</span>
+                    )}
+                    </div>
                   <button className="calendar-nav-btn" onClick={this.handleNextMonth}>
                     <span>›</span>
                   </button>
@@ -509,7 +534,7 @@ class FindCar extends Component {
                     tileDisabled={this.disablePreviousDates}
                     showNeighboringMonth={false}
                     formatShortWeekday={(locale, date) => moment(date).format("ddd").charAt(0)}
-                    showDoubleView={true}
+                    showDoubleView={!isMobile}
                   />
                 </div>
 
