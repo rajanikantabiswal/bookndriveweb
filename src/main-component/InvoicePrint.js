@@ -100,7 +100,7 @@ class BookingList1 extends Component {
           return (
               <tr key={key}>
                   <td>{i}.</td>
-                  {/* <td ><img alt={val.car_name} src={'http://127.0.0.1:8000/images/'+val.image} width='60'/> </td> */}
+                  {/* <td ><img alt={val.car_name} src={'https://backend.bookndrive.in/public/images/'+val.image} width='60'/> </td> */}
                   <td>{val.car_number}</td>
                   <td>{val.model_name}</td>
                   <td>{val.id}</td>

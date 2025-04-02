@@ -217,7 +217,7 @@ class VendorAddCar extends Component {
 
       //console.log(formData);
 
-      axios.post("http://127.0.0.1:8000/add_vendor_car", formData).then((result) => {
+      axios.post("https://backend.bookndrive.in/public/add_vendor_car", formData).then((result) => {
          let status = result.data.status;
          if (status === 1) {
             const MySwal = withReactContent(Swal);

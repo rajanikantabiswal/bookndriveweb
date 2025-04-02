@@ -137,7 +137,7 @@ const CarList = () => {
             //     <div className="single-offers px-2">
             //         <div className="offer-image">
             //             <Link to="/car-booking">
-            //                 <img src={'http://127.0.0.1:8000/' + val.image} alt="offer 1" />
+            //                 <img src={'https://backend.bookndrive.in/public/' + val.image} alt="offer 1" />
             //             </Link>
             //         </div>
             //         <div className="offer-text">
@@ -227,7 +227,7 @@ const CarList = () => {
                 <div className="position-relative">
                     <Link to="/car-booking" className="d-block overflow-hidden" style={{ height: "200px" }}>
                         <img
-                            src={'http://127.0.0.1:8000/' + val.image}
+                            src={'https://backend.bookndrive.in/public/' + val.image}
                             alt={`${val.car_name} ${val.model_name}`}
                             className="img-fluid w-100 h-100 object-fit-contain"
                         />

@@ -288,7 +288,7 @@ class BookingList extends Component {
                 <tr key={key}>
                     <td data-label="S.No.">{i}.</td>
                     <td data-label="Regd No.">{val.car_number}</td>
-                    <td data-label="Car Model"><img src={'http://127.0.0.1:8000/'+val.car_image} alt="offer 1" width="100"/></td>
+                    <td data-label="Car Model"><img src={'https://backend.bookndrive.in/public/'+val.car_image} alt="offer 1" width="100"/></td>
                     <td data-label="Booking ID">BND{val.bid}{val.id}</td>
                     <td data-label="Booking Date">{val.fromTime}</td>
                     <td data-label="Location">{val.from_address} To {val.to_address}</td>
@@ -325,7 +325,7 @@ class BookingList extends Component {
                 <tr key={key}>
                     <td data-label="S.No.">{i}.</td>
                     <td data-label="Regd No.">{val.car_number}</td>
-                    <td data-label="Car Model"><img src={'http://127.0.0.1:8000/'+val.car_image} alt="offer 1" width="100"/></td>
+                    <td data-label="Car Model"><img src={'https://backend.bookndrive.in/public/'+val.car_image} alt="offer 1" width="100"/></td>
                     <td data-label="Booking ID">BND{val.bid}{val.id}</td>
                     <td data-label="Booking Date">{val.fromTime}</td>
                     <td data-label="Location">{val.from_address} To {val.to_address}</td>

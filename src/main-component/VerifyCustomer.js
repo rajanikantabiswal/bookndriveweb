@@ -75,9 +75,9 @@ class VehicalAdd extends Component {
         const id=localStorage.getItem("verifyCustomer");
         const result =  await this.https.post('/customer_list_id',{token:this.token,id:id});
     
-        const img1='http://127.0.0.1:8000/'+result.data.data.license;
-        const img2='http://127.0.0.1:8000/'+result.data.data.idcard;
-        const img3='http://127.0.0.1:8000/'+result.data.data.photo;
+        const img1='https://backend.bookndrive.in/public/'+result.data.data.license;
+        const img2='https://backend.bookndrive.in/public/'+result.data.data.idcard;
+        const img3='https://backend.bookndrive.in/public/'+result.data.data.photo;
    
      
        this.setState({

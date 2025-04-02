@@ -91,7 +91,7 @@ class VehicalAdd extends Component {
       formData.append('id',id);
       
 
-      axios.post("http://127.0.0.1:8000/add_city", formData).then((result)=>{
+      axios.post("https://backend.bookndrive.in/public/add_city", formData).then((result)=>{
             let status=result.data.status; 
             if(status === 1){
               

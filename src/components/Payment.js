@@ -13,7 +13,7 @@ const Payment = () => {
     }, []);
 
     const handlePayment = async () => {
-        const response = await fetch("http://127.0.0.1:8000/api/create-order", {
+        const response = await fetch("https://backend.bookndrive.in/public/api/create-order", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ amount: 1 }) // Amount in INR
@@ -37,7 +37,7 @@ const Payment = () => {
                     return;
                 }
                 // Send payment response to backend for verification
-                const verifyResponse = await fetch("http://127.0.0.1:8000/api/verify-payment", {
+                const verifyResponse = await fetch("https://backend.bookndrive.in/public/api/verify-payment", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
@@ -58,7 +58,7 @@ const Payment = () => {
     };
 
     //   const verifyPayment = async (paymentData) => {
-    //     const response = await fetch("http://127.0.0.1:8000/api/verify-payment", {
+    //     const response = await fetch("https://backend.bookndrive.in/public/api/verify-payment", {
     //       method: "POST",
     //       headers: { "Content-Type": "application/json" },
     //       body: JSON.stringify(paymentData)
