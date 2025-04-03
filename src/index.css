@@ -5475,6 +5475,14 @@ input[type="radio"]:checked ~ label {
   background: #fff;
   color: #ec3323;
 }
+
+
+.contact-icon{
+  border-radius: 50px 0px 0px 50px !important;
+  width: 40px !important;
+  height: 40px !important;
+  padding: 10px !important;
+}
 /*===============================================================================================*/
 
 
