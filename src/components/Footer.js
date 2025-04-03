@@ -1,4 +1,5 @@
 import React from "react";
+import { FaWhatsapp, FaPhone } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import {
@@ -19,9 +20,9 @@ const Footer = () => {
         e.preventDefault();
     };
 
-   const cssdesign={
-    color:'white'
-   }
+    const cssdesign = {
+        color: 'white'
+    }
 
     return (
         <footer className="rent-drive-footer-area">
@@ -35,7 +36,7 @@ const Footer = () => {
                                         <img src={logo} alt="footer-logo" className="logo-footer"/>
                                     </Link>
                                 </div>
-                               
+
                                 <div className="single-footer newsletter_box">
                                     <h3>Newsletter</h3>
                                     <form >
@@ -45,7 +46,7 @@ const Footer = () => {
                                         </button>
                                     </form>
                                 </div>
-                                
+
                             </div>
                         </Col>
                         <Col lg={3}>
@@ -71,12 +72,12 @@ const Footer = () => {
                                     Contact
                                 </Link>
                                 </p>
-                              
+
                             </div>
-                            
+
                         </Col>
                         <Col lg={3}>
-                            
+
                             <div className="footer-address">
                                 <h3>Our Services</h3>
                                 <p>
@@ -128,36 +129,17 @@ const Footer = () => {
                             </div>
                         </Col>
                         <Col md={6}>
-                            <div className="footer-social">
-                                <ul>
-                                    <li>
-                                        <Link to="/" onClick={onClick}>
-                                            <FaFacebookF />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" onClick={onClick}>
-                                            <FaTwitter />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" onClick={onClick}>
-                                            <FaLinkedinIn />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link to="/" onClick={onClick}>
-                                            <FaSkype />
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
+                            
                         </Col>
                     </Row>
                 </Container>
             </div>
-           
+
         </footer>
+
+
+      
+
     );
 };
 
