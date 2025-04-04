@@ -546,7 +546,7 @@ class FindCar extends Component {
                 {/* Time sliders */}
                 <div className="range-picker-sliders">
                   <div className="slider-group">
-                    <div className="slider-label">Start Time</div>
+                    <div className="slider-label">Start Time<span className="slider-value">{this.formatHour(tempStartTime)}</span></div>
                     <div className="slider-with-value">
                       <Slider
                         min={0}
@@ -563,11 +563,10 @@ class FindCar extends Component {
                           marginTop: -7,
                         }}
                       />
-                      <div className="slider-value">{this.formatHour(tempStartTime)}</div>
                     </div>
                   </div>
                   <div className="slider-group">
-                    <div className="slider-label">End Time</div>
+                    <div className="slider-label">End Time<span className="slider-value">{this.formatHour(tempEndTime)}</span></div>
                     <div className="slider-with-value">
                       <Slider
                         min={0}
@@ -584,7 +583,7 @@ class FindCar extends Component {
                           marginTop: -7,
                         }}
                       />
-                      <div className="slider-value">{this.formatHour(tempEndTime)}</div>
+                      
                     </div>
                   </div>
                 </div>

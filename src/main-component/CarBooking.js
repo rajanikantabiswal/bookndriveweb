@@ -321,6 +321,7 @@ class CarBooking extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.imagestore();
     this.imagestore1();
     this.imagestore2();
@@ -861,7 +862,7 @@ class CarBooking extends Component {
       <Fragment>
         <Header />
 
-        <section className="rent-drive-breadcromb-area section_70">
+        {/* <section className="rent-drive-breadcromb-area section_70">
           <Container>
             <Row>
               <Header2 />
@@ -884,12 +885,27 @@ class CarBooking extends Component {
               </Col>
             </Row>
           </Container>
-        </section>
-        <section className="rent-drive-booking-form section_70">
+        </section> */}
+        <section className="rent-drive-booking-form pt-3">
           <div className="container">
             <Form onSubmit={this.handleSubmit} id="account_form">
               <div className="row">
                 <div className="col-lg-8">
+                  <div>
+                    <ul className="d-flex align-items-center">
+                      <li>
+                        <FaHome />
+                      </li>
+                      <li>
+                        <Link to="/dashboard">Home</Link>
+                      </li>
+                      <li>
+                        <FaAngleRight />
+                      </li>
+                      <li> <Link to="/dashboard">Car Booking</Link> </li>
+                    </ul>
+                  </div>
+
                   <div>
                     {listItems}
                   </div>

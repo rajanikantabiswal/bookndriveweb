@@ -76,7 +76,8 @@ const OtpVerification = () => {
     signInWithPhoneNumber(auth, phoneNumber, verifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
-        alert('OTP Sent Successfully');
+        const MySwal = withReactContent(Swal);
+        MySwal.fire('OTP sent successfully! Please check your messages.');
       })
       .catch((error) => {
         console.error('OTP Send Error:', error);
