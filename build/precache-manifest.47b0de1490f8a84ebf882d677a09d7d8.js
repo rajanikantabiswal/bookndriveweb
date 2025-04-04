@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "bada6141fc7d290a9b2e",
-    "url": "/static/css/main.55f158a9.chunk.css"
+    "revision": "bbe4137181ad7b63903f",
+    "url": "/static/css/main.d88e212c.chunk.css"
   },
   {
-    "revision": "bada6141fc7d290a9b2e",
-    "url": "/static/js/main.6d2a349c.chunk.js"
+    "revision": "bbe4137181ad7b63903f",
+    "url": "/static/js/main.a317b9c7.chunk.js"
   },
   {
     "revision": "f7ccb321014e101b6bdc",
@@ -148,16 +148,16 @@ self.__precacheManifest = [
     "url": "/static/media/car-detail.0eb30e17.jpg"
   },
   {
-    "revision": "0dd049d9570744f9e48f38a677f92c69",
-    "url": "/static/media/footer-bg.0dd049d9.jpg"
-  },
-  {
     "revision": "ab6a48dcd62dc1b5845c06a4c230ee9f",
     "url": "/static/media/slider-1.ab6a48dc.jpg"
   },
   {
     "revision": "229d0e73c7e1de90a679721b51d98a69",
     "url": "/static/media/slider-2.229d0e73.jpg"
+  },
+  {
+    "revision": "0dd049d9570744f9e48f38a677f92c69",
+    "url": "/static/media/footer-bg.0dd049d9.jpg"
   },
   {
     "revision": "f6eaf215ba89f431ebe2fcd2c9ae8186",
@@ -168,7 +168,7 @@ self.__precacheManifest = [
     "url": "/static/media/home_banner_mobile.435cb441.webp"
   },
   {
-    "revision": "ebd20ba094601a33f2914636308eab69",
+    "revision": "83e4f2b5c3087a9ab37423bf7d843eac",
     "url": "/index.html"
   }
 ];
