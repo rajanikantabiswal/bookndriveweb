@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "bbe4137181ad7b63903f",
-    "url": "/static/css/main.d88e212c.chunk.css"
+    "revision": "3512e88cc78c12708fbc",
+    "url": "/static/css/main.81140fc5.chunk.css"
   },
   {
-    "revision": "bbe4137181ad7b63903f",
+    "revision": "3512e88cc78c12708fbc",
     "url": "/static/js/main.a317b9c7.chunk.js"
   },
   {
@@ -40,12 +40,12 @@ self.__precacheManifest = [
     "url": "/static/media/setting-cog.d8bb2027.svg"
   },
   {
-    "revision": "d41f55a78e6f49a5512878df1737e58a",
-    "url": "/static/media/slick.d41f55a7.ttf"
-  },
-  {
     "revision": "ced611daf7709cc778da928fec876475",
     "url": "/static/media/slick.ced611da.eot"
+  },
+  {
+    "revision": "d41f55a78e6f49a5512878df1737e58a",
+    "url": "/static/media/slick.d41f55a7.ttf"
   },
   {
     "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
@@ -148,10 +148,6 @@ self.__precacheManifest = [
     "url": "/static/media/car-detail.0eb30e17.jpg"
   },
   {
-    "revision": "ab6a48dcd62dc1b5845c06a4c230ee9f",
-    "url": "/static/media/slider-1.ab6a48dc.jpg"
-  },
-  {
     "revision": "229d0e73c7e1de90a679721b51d98a69",
     "url": "/static/media/slider-2.229d0e73.jpg"
   },
@@ -160,15 +156,19 @@ self.__precacheManifest = [
     "url": "/static/media/footer-bg.0dd049d9.jpg"
   },
   {
-    "revision": "f6eaf215ba89f431ebe2fcd2c9ae8186",
-    "url": "/static/media/find-box-bg.f6eaf215.png"
+    "revision": "ab6a48dcd62dc1b5845c06a4c230ee9f",
+    "url": "/static/media/slider-1.ab6a48dc.jpg"
   },
   {
     "revision": "435cb4417cd75784917ae8ebf65706bc",
     "url": "/static/media/home_banner_mobile.435cb441.webp"
   },
   {
-    "revision": "83e4f2b5c3087a9ab37423bf7d843eac",
+    "revision": "f6eaf215ba89f431ebe2fcd2c9ae8186",
+    "url": "/static/media/find-box-bg.f6eaf215.png"
+  },
+  {
+    "revision": "4c86e826d6df2b80687701ca90202870",
     "url": "/index.html"
   }
 ];
