@@ -102,6 +102,8 @@ import Pinvalid from "./Pinvalid";
 import Passbook from "./Passbook";
 import OtpVerification from "./OtpVerification";
 
+import Blogs from "./Blogs";
+
 
 // import AuthUser from "../components/AuthUser";
 // const baseUrl='http://localhost:3000';
@@ -200,6 +202,8 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
+                            <Route path='/blogs'  element={<Blogs />} />
+                            
 
                         </Routes>
                     </Router>
@@ -258,6 +262,7 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
+                            <Route path='/blogs'  element={<Blogs />} />
                         </Routes>
                     </Router>
                 </div>
@@ -294,6 +299,7 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
+                            <Route path='/blogs'  element={<Blogs />} />
                         </Routes>
                     </Router>
                 </div>
@@ -330,7 +336,7 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
-
+                            <Route path='/blogs'  element={<Blogs />} />
 
 
                         </Routes>
@@ -365,6 +371,7 @@ const AllRoute = () => {
                         <Route path='/payment-success'  element={<Psuccess />} />
                         <Route path='/payment-exits'  element={<Pexits />} />
                         <Route path='/payment-invalid'  element={<Pinvalid />} />
+                        <Route path='/blogs'  element={<Blogs />} />
 
                     </Routes>
                 </Router>
