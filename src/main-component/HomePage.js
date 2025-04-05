@@ -14,7 +14,7 @@ import Testimonial from "../components/Testimonial";
 import Faq from "../components/home/Faq";
 import DateTimeRangePicker from "../components/DateTimeRangePicker";
 import ProductReviews from "../components/ProductReviews";
-import BlogSection from "../components/BlogSection";
+import BlogSection from "../components/home/BlogSection";
 
 const HomePage = () => {
     return (
@@ -30,7 +30,7 @@ const HomePage = () => {
             {/* <WhyChoose/> */}
             <ProductReviews />
             <Faq />
-            {/* <BlogSection /> */}
+            <BlogSection />
             <Promo />
             
             <Footer />

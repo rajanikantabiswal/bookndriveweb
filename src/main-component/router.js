@@ -102,7 +102,8 @@ import Pinvalid from "./Pinvalid";
 import Passbook from "./Passbook";
 import OtpVerification from "./OtpVerification";
 
-import Blogs from "./Blogs";
+import BlogList from "./BlogList";
+import BlogDetails from "./BlogDetails";
 
 
 // import AuthUser from "../components/AuthUser";
@@ -202,7 +203,10 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<Blogs />} />
+                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path="/blogs/:slug" element={<BlogDetails />} />
+
+
                             
 
                         </Routes>
@@ -262,7 +266,8 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<Blogs />} />
+                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path="/blogs/:slug" element={<BlogDetails />} />
                         </Routes>
                     </Router>
                 </div>
@@ -299,7 +304,8 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<Blogs />} />
+                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path="/blogs/:slug" element={<BlogDetails />} />
                         </Routes>
                     </Router>
                 </div>
@@ -336,7 +342,8 @@ const AllRoute = () => {
                             <Route path='/payment-exits'  element={<Pexits />} />
                             <Route path='/payment-invalid'  element={<Pinvalid />} />
                             <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<Blogs />} />
+                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path="/blogs/:slug" element={<BlogDetails />} />
 
 
                         </Routes>
@@ -371,7 +378,8 @@ const AllRoute = () => {
                         <Route path='/payment-success'  element={<Psuccess />} />
                         <Route path='/payment-exits'  element={<Pexits />} />
                         <Route path='/payment-invalid'  element={<Pinvalid />} />
-                        <Route path='/blogs'  element={<Blogs />} />
+                        <Route path='/blogs'  element={<BlogList />} />
+                        <Route path="/blogs/:slug" element={<BlogDetails />} />
 
                     </Routes>
                 </Router>
