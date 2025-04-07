@@ -35,9 +35,10 @@
     padding: 20px;
     margin: -30px 20px 0;
     position: relative;
+    min-height: 280px;
   }
   .blog-grid .blog-info h5 {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin: 0 0 10px;
   }

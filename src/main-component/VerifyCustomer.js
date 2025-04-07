@@ -13,6 +13,7 @@ import Form from "react-bootstrap/Form";
 import { getToken,https } from "../components/AuthUser";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import config from "../config";
 
 
 function NavigateWrapper() {
@@ -75,9 +76,9 @@ class VehicalAdd extends Component {
         const id=localStorage.getItem("verifyCustomer");
         const result =  await this.https.post('/customer_list_id',{token:this.token,id:id});
     
-        const img1='https://backend.bookndrive.in/public/'+result.data.data.license;
-        const img2='https://backend.bookndrive.in/public/'+result.data.data.idcard;
-        const img3='https://backend.bookndrive.in/public/'+result.data.data.photo;
+        const img1=config.PUBLIC_URL+result.data.data.license;
+        const img2=config.PUBLIC_URL+result.data.data.idcard;
+        const img3=config.PUBLIC_URL+result.data.data.photo;
    
      
        this.setState({

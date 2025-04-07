@@ -17,15 +17,12 @@ const BlogList = () => {
             </Helmet>
             <Header />
            
-            <div className="container py-5 bg-white">
+            <div className="container py-5 bg-white mt-5 mt-lg-0">
                 <div className="row justify-content-center">
                     <div className="col-lg-7 text-center">
-                        <div className="section-title">
+                        <div className="section-title py-3 py-lg-0">
                             <h2>Our Blogs</h2>
-                            <p>
-                                I design and develop services for customers of all sizes, specializing
-                                in creating stylish, modern websites
-                            </p>
+                            
                         </div>
                     </div>
                 </div>

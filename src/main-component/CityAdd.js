@@ -13,6 +13,7 @@ import axios from 'axios';
 import { getToken,https } from "../components/AuthUser";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import config from "../config";
 //const MySwal = withReactContent(Swal);
 //MySwal.fire(result.data.message);
 
@@ -60,7 +61,7 @@ class VehicalAdd extends Component {
       formData.append('type',this.state.type);
       
 
-      axios.post("https://backend.bookndrive.in/public/add_city", formData).then((result)=>{
+      axios.post(`${config.PUBLIC_URL}add_city`, formData).then((result)=>{
             let status=result.data.status; 
             if(status === 1){
                  const MySwal = withReactContent(Swal);

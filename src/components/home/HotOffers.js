@@ -14,6 +14,8 @@ import SettingIcon from "../../img/setting-cog.svg";
 import OilTypeIcon from "../../img/hybrid-car.svg";
 import RoadIcon from "../../img/road.svg";
 import MilageIcon from "../../img/milage.png";
+import config from "../../config";
+
 
 function NavigateWrapper() {
 
@@ -172,7 +174,7 @@ class HotOffers extends Component {
                         <div className="position-relative">
                             <Link to="/car-booking" className="d-block overflow-hidden" style={{ height: "200px" }}>
                                 <img
-                                    src={'https://backend.bookndrive.in/public/' + val.image}
+                                    src={config.PUBLIC_URL + val.image}
                                     alt={`${val.car_name} ${val.model_name}`}
                                     className="img-fluid w-100 h-100 object-fit-contain"
                                 />

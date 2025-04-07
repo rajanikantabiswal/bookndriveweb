@@ -11,7 +11,7 @@ import Table from 'react-bootstrap/Table';
 import "../css/Dashboard.css";
 import PanelSidebar from '../components/PanelSidebar';
 import { getToken,https,getUser } from "../components/AuthUser";
-
+import config from "../config";
 function NavigateWrapper() {
     const navigate = useNavigate();
 
@@ -128,7 +128,7 @@ class VendorListCar extends Component {
                 <td data-label="Color">{val.color}</td>
                 <td data-label="Price">{val.price}</td>
                
-                <td data-label="Owner Book"><img alt={val.car_name} src={'https://backend.bookndrive.in/public/'+val.owner_book} width='60'/> </td>
+                <td data-label="Owner Book"><img alt={val.car_name} src={config.PUBLIC_URL+val.owner_book} width='60'/> </td>
                 <td data-label="Addon">{val.created_at}</td>
                
             </tr>

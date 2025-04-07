@@ -14,6 +14,7 @@ import refresh from "../img/refresh.png"
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import config from "../config";
 
 function NavigateWrapper() {
     const navigate = useNavigate();
@@ -88,7 +89,7 @@ class SignUpPage extends Component {
         }
 
 
-        const url = 'https://backend.bookndrive.in/public/capcha.php?text=' + string;
+        const url = `${config.PUBLIC_URL}capcha.php?text=` + string;
         this.setState({
             capchaimg: url,
             capchatext: string
@@ -111,7 +112,7 @@ class SignUpPage extends Component {
         }
 
 
-        const url = 'https://backend.bookndrive.in/public/capcha.php?text=' + string;
+        const url = `${config.PUBLIC_URL}capcha.php?text=` + string;
         this.setState({
             capchaimg: url,
             capchatext: string
