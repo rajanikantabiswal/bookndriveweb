@@ -14,7 +14,7 @@ import { FaRupeeSign } from "react-icons/fa";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { createProxyMiddleware } from 'http-proxy-middleware';
-
+import config from "../config";
 import SettingIcon from "../img/setting-cog.svg";
 import OilTypelIcon from "../img/hybrid-car.svg";
 import RoadIcon from "../img/road.svg";
@@ -749,7 +749,7 @@ class CarBooking extends Component {
 
                 <div className="col-lg-7">
                   <div className="car-booking-image">
-                    <img src={'https://backend.bookndrive.in/public/' + val.image} className="border-0" alt="car" />
+                    <img src={config.PUBLIC_URL + val.image} className="border-0" alt="car" />
 
                   </div>
 

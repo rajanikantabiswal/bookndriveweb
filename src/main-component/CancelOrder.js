@@ -12,6 +12,7 @@ import "../css/BookingList.css";
 import PanelSidebar from '../components/PanelSidebar';
 import { getToken,https } from "../components/AuthUser";
 import Form from "react-bootstrap/Form";
+import config from "../config";
 
 function NavigateWrapper() {
     const navigate = useNavigate();
@@ -265,10 +266,9 @@ class BookingList extends Component {
           return (
               <tr key={key}>
                   <td data-label="S.No.">{i}.</td>
-                  {/* <td ><img alt={val.car_name} src={'https://backend.bookndrive.in/public/images/'+val.image} width='60'/> </td> */}
                 
                   <td data-label="Regd No.">{val.car_number}</td>
-                  <td data-label="Car Model"><img src={'https://backend.bookndrive.in/public/'+val.car_image} alt="offer 1" width="100"/></td>
+                  <td data-label="Car Model"><img src={config.PUBLIC_URL+val.car_image} alt="offer 1" width="100"/></td>
                   <td data-label="Booking ID">BND{val.bid}{val.id}</td>
                   <td data-label="Booking Date">{val.fromTime}</td>
                   <td data-label="Location">{val.from_address} To {val.to_address}</td>

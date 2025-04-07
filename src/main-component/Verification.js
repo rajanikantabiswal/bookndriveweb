@@ -15,7 +15,7 @@ import { getToken,https,getUser } from "../components/AuthUser";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-
+import config from "../config";
 
 let userData=getUser();
 function NavigateWrapper() {
@@ -87,7 +87,7 @@ class Verification extends Component {
             formData.append('image3',this.owner_book2.current.files[0],this.owner_book2.current.files[0].na);
          }
        
-         axios.post("https://backend.bookndrive.in/public/verify_customer", formData).then((result)=>{
+         axios.post(`${config.PUBLIC_URL}verify_customer`, formData).then((result)=>{
   
          const MySwal = withReactContent(Swal);
           MySwal.fire('Request Success');
@@ -136,9 +136,9 @@ class Verification extends Component {
     let bts4;
     let bts5;
     let bts9;
-    let bts6='https://backend.bookndrive.in/public/'+this.state.license;
-    let bts7='https://backend.bookndrive.in/public/'+this.state.idcard;
-    let bts8='https://backend.bookndrive.in/public/'+this.state.photo;
+    let bts6=config.PUBLIC_URL+this.state.license;
+    let bts7=config.PUBLIC_URL+this.state.idcard;
+    let bts8=config.PUBLIC_URL+this.state.photo;
 
    
     if (this.state.profile === 0) {

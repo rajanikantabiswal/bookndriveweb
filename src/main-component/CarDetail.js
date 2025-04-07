@@ -10,6 +10,7 @@ import { getToken,https } from "../components/AuthUser";
 import { Link } from "react-router-dom";
 import  "../css/CarDetail.css";
 import { FaRupeeSign } from "react-icons/fa";
+import config from "../config";
 
 function NavigateWrapper() {
     const navigate = useNavigate();
@@ -90,7 +91,7 @@ class CarDetail extends Component {
             return (
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="car-booking-image"><img src={'https://backend.bookndrive.in/public/'+val.car_image} alt="car"/></div>
+                        <div class="car-booking-image"><img src={config.PUBLIC_URL+val.car_image} alt="car"/></div>
                     </div>
                     <div class="col-lg-6">
                         

@@ -5,6 +5,7 @@ import "./index.css";
 import "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import { HelmetProvider } from 'react-helmet-async';
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -15,7 +16,9 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </React.StrictMode>
 );
 

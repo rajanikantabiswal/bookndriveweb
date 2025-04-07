@@ -13,6 +13,7 @@ import PageTitle from "../components/PageTitle";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import config from "../config";
 
 
 class VendorAddCar extends Component {
@@ -166,7 +167,7 @@ class VendorAddCar extends Component {
       formData.append('id', id);
   
 
-      axios.post("https://backend.bookndrive.in/public/add_vendor_car", formData).then((result)=>{
+      axios.post(`${config.PUBLIC_URL}add_vendor_car`, formData).then((result)=>{
             let status=result.data.status; 
             if(status ==='1'){
                 const MySwal = withReactContent(Swal);
@@ -780,7 +781,7 @@ class VendorAddCar extends Component {
                         </Col>
                         <Col md={4}>
                         <Form.Control type="file" accept="image/*" name="file2" onChange={this.handleChange} ref={this.owner_book1}  />
-                        <a href={'https://backend.bookndrive.in/public/'+this.state.puc_file}  target="_blank"><img  src={'https://backend.bookndrive.in/public/'+this.state.puc_file} width='60'/></a>
+                        <a href={config.PUBLIC_URL+this.state.puc_file}  target="_blank"><img  src={config.PUBLIC_URL+this.state.puc_file} width='60'/></a>
                         </Col>
                          
                           <Col md={2}>
@@ -788,7 +789,7 @@ class VendorAddCar extends Component {
                                 </Col>
                                 <Col md={4}>
                                 <Form.Control type="file" accept="image/*"   name="file3" onChange={this.handleChange}  ref={this.owner_book2}  />
-                                <a href={'https://backend.bookndrive.in/public/'+this.state.insu_file}  target="_blank"><img  src={'https://backend.bookndrive.in/public/'+this.state.insu_file} width='60'/></a>
+                                <a href={config.PUBLIC_URL+this.state.insu_file}  target="_blank"><img  src={config.PUBLIC_URL+this.state.insu_file} width='60'/></a>
                                 </Col>
                           </Row>
                        </Form.Group>
@@ -802,7 +803,7 @@ class VendorAddCar extends Component {
                         </Col>
                         <Col md={4}>
                           <Form.Control type="file" accept="image/*" name="file" onChange={this.handleChange} ref={this.car_image}  />
-                          <a href={'https://backend.bookndrive.in/public/'+this.state.car_image}  target="_blank"><img  src={'https://backend.bookndrive.in/public/'+this.state.car_image} width='60'/></a>
+                          <a href={config.PUBLIC_URL+this.state.car_image}  target="_blank"><img  src={config.PUBLIC_URL+this.state.car_image} width='60'/></a>
                         </Col>
                          
 
@@ -811,7 +812,7 @@ class VendorAddCar extends Component {
                                 </Col>
                                 <Col md={4}>
                                 <Form.Control type="file" accept="image/*" name="file1" onChange={this.handleChange} ref={this.owner_book}  />
-                                <a href={'https://backend.bookndrive.in/public/'+this.state.owner_book}  target="_blank"><img  src={'https://backend.bookndrive.in/public/'+this.state.owner_book} width='60'/></a>
+                                <a href={config.PUBLIC_URL+this.state.owner_book}  target="_blank"><img  src={config.PUBLIC_URL+this.state.owner_book} width='60'/></a>
                                 </Col>
                           </Row>
                        </Form.Group>

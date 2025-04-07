@@ -13,6 +13,7 @@ import PageTitle from "../components/PageTitle";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
+import config from "../config";
 
 
 const CAR_FEATURES = [
@@ -217,7 +218,7 @@ class VendorAddCar extends Component {
 
       //console.log(formData);
 
-      axios.post("https://backend.bookndrive.in/public/add_vendor_car", formData).then((result) => {
+      axios.post(`${config.PUBLIC_URL}add_vendor_car`, formData).then((result) => {
          let status = result.data.status;
          if (status === 1) {
             const MySwal = withReactContent(Swal);

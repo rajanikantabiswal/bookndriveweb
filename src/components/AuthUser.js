@@ -2,9 +2,11 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+import config from "../config";
+
 const https = () =>{
     return axios.create({
-    baseURL:'https://backend.bookndrive.in',
+    baseURL:config.BASE_URL,
     headers:{
         "content-type" :"application/json"
     }
@@ -65,7 +67,7 @@ export default function AuthUser(){
     }
 
     const http = axios.create({
-    baseURL:'https://backend.bookndrive.in',
+    baseURL:config.BASE_URL,
     headers:{
         "content-type" :"application/json"
     }

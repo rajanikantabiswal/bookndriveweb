@@ -53,8 +53,8 @@ const Footer = () => {
                         <div className="footer-address">
                                 <h3>Quick Links</h3>
                                 <p>
-                                <Link to="/home" style={cssdesign}>
-                                    Home
+                                <Link to="/blogs" style={cssdesign}>
+                                    Blogs
                                 </Link>
                                 </p> 
                                 <p>

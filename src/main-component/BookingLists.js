@@ -127,7 +127,6 @@ class BookingList extends Component {
           return (
               <tr key={key}>
                   <td data-label="S.No.">{i}.</td>
-                  {/* <td ><img alt={val.car_name} src={'https://backend.bookndrive.in/public/images/'+val.image} width='60'/> </td> */}
                  
                   <td data-label="Regd No.">{val.car_number}</td>
                   <td data-label="Car Model">{val.model_name}</td>
