@@ -36,7 +36,7 @@ const checkLogin = () => {
 
 const https = () =>{
     return axios.create({
-    baseURL:'https://backend.bookndrive.in',
+    baseURL:config.BASE_URL,
     headers:{
         "content-type" :"application/json"
     }
@@ -65,7 +65,7 @@ export default function AuthUser(){
     }
 
     const http = axios.create({
-    baseURL:'https://backend.bookndrive.in',
+    baseURL:config.BASE_URL,
     headers:{
         "content-type" :"application/json"
     }
