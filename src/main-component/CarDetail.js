@@ -60,13 +60,6 @@ class CarDetail extends Component {
   
             }
         })
-     
-  
-  
-           
-  
-            
-  
     }
  
 

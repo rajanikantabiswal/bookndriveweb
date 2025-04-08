@@ -257,7 +257,7 @@ const CarList = () => {
                     <div className="row g-0 mb-3 spec-icons border-top border-bottom py-3">
                         <div className="col-4 text-center border-end">
                             <img src={MilageIcon} className="mb-1" width={28} alt="Mileage" />
-                            <p className="mb-0 small">{val.avrage}</p>
+                            <p className="mb-0 small">{val.avrage} KMPL</p>
                         </div>
                         <div className="col-4 text-center border-end">
                             <img src={OilTypeIcon} className="mb-1" width={28} alt="Fuel Type" />
