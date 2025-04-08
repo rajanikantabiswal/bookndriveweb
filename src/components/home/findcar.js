@@ -80,10 +80,45 @@ class FindCar extends Component {
       // Existing jQuery snippets if needed...
     });
     window.addEventListener("resize", this.handleResize);
+    // Initialize date range and store in localStorage
+    const { start, end } = this.state;
+
+    // Create date objects with proper time values
+    const startDateTime = new Date(start);
+    startDateTime.setHours(this.getStartTime());
+
+    const endDateTime = new Date(end);
+    endDateTime.setHours(this.getEndTime());
+
+    // Update state with these complete datetime objects
+    this.setState({
+      start: startDateTime,
+      end: endDateTime
+    }, () => {
+      // After state is updated, store in localStorage
+      this.storeDateRangeInLocalStorage();
+    });
   }
 
   componentWillUnmount() {
     window.removeEventListener("resize", this.handleResize);
+  }
+
+  storeDateRangeInLocalStorage() {
+    const { start, end } = this.state;
+    const startFormatted = moment(start).format("DD/MM/YYYY, h:mm a");
+    const endFormatted = moment(end).format("DD/MM/YYYY, h:mm a");
+    const dateRange = `${startFormatted} - ${endFormatted}`;
+    localStorage.setItem("date", dateRange);
+    localStorage.setItem("formattedDate", start);
+    localStorage.setItem("formattedDate2", end);
+
+    this.setState({
+      date: startFormatted,
+      date1: endFormatted,
+      selectedDate: start,
+      selectedDate2: end,
+    });
   }
 
   getStartTime = () => {
@@ -509,13 +544,13 @@ class FindCar extends Component {
                   <button className="calendar-nav-btn" onClick={this.handlePrevMonth}>
                     <span>‹</span>
                   </button>
-                  
-                    <div className="calendar-months">
-                      <span className="calendar-month-title">{currentMonthName}</span>
-                      {!isMobile && (
+
+                  <div className="calendar-months">
+                    <span className="calendar-month-title">{currentMonthName}</span>
+                    {!isMobile && (
                       <span className="calendar-month-title">{nextMonthName}</span>
                     )}
-                    </div>
+                  </div>
                   <button className="calendar-nav-btn" onClick={this.handleNextMonth}>
                     <span>›</span>
                   </button>
@@ -583,7 +618,7 @@ class FindCar extends Component {
                           marginTop: -7,
                         }}
                       />
-                      
+
                     </div>
                   </div>
                 </div>
