@@ -349,7 +349,41 @@ class CarBooking extends Component {
       });
     }
 
-    const date1 = localStorage.getItem("date");
+    let date1;
+
+    if (localStorage.getItem("date") === null) {
+      const now = new Date();
+
+      const pad = (n) => n.toString().padStart(2, '0');
+
+      const formatTime = (date) => {
+        let hours = date.getHours();
+        const minutes = pad(date.getMinutes());
+        const ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // hour '0' should be '12'
+        return `${hours}:00 ${ampm}`;
+      };
+
+      const formatDate = (date) => {
+        return `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}`;
+      };
+
+      // Round to the next hour and set minutes to 00
+      let startDate = new Date(now);
+      if (startDate.getMinutes() > 0) {
+        startDate.setHours(startDate.getHours() + 1);
+      }
+      startDate.setMinutes(0, 0, 0); // Set minutes, seconds, milliseconds to 0
+
+      // Add 12 hours for the end time
+      let endDate = new Date(startDate.getTime() + 12 * 60 * 60 * 1000);
+
+      date1 = `${formatDate(startDate)}, ${formatTime(startDate)} - ${formatDate(endDate)}, ${formatTime(endDate)}`;
+
+    } else {
+      date1 = localStorage.getItem("date");
+    }
     const myArray = date1.split(' - ');
 
 
