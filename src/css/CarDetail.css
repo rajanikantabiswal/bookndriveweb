@@ -16,6 +16,12 @@
     text-align: center;
     text-transform: uppercase;
     transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.rent-drive-btn:hover, .rent-drive-theme-btn:hover {
+    background: #ec3323;
+    color: #fff;
 }
 
 .rent-drive-theme-btn2{

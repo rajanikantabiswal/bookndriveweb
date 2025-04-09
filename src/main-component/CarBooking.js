@@ -293,7 +293,7 @@ class CarBooking extends Component {
       const insurance_amount = insurance_amount1.toFixed(2);
       let tts1 = this.state.tts;
       let tts = tts1 + insurance_amount1;
-      const gst1 = tts1 / 100 * 5;
+      const gst1 = tts1 / 100 * 2;
       const gst = gst1.toFixed(2);
 
       const total1 = this.state.gst1 + tts;
@@ -429,7 +429,10 @@ class CarBooking extends Component {
         const tts1 = tts.toFixed(2);
 
 
-        const gst1 = tts / 100 * 5;
+        let gst1 = tts / 100 * 2;
+        if(gst1 < 99){
+          gst1 = 99;
+        }
         const gst = gst1.toFixed(2);
 
         const total1 = gst1 + tts;
@@ -1187,7 +1190,7 @@ class CarBooking extends Component {
                           </Col>
                         </Row>
 
-                        <Row>
+                        {/* <Row>
                           <Col lg={12}>
                             <div className="line"></div>
                           </Col>
@@ -1217,11 +1220,11 @@ class CarBooking extends Component {
                           <Col lg={12}>
                             <div className="line"></div>
                           </Col>
-                        </Row>
+                        </Row> */}
                         <Row>
-                          <Col lg={12}>
+                          {/* <Col lg={12}>
                             <b>INSURANCE: INR {this.state.insurance1}/-</b>
-                          </Col>
+                          </Col> */}
                         </Row>
                         <Row>
                           <Col lg={12}>
