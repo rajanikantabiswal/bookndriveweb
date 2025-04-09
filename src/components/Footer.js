@@ -44,18 +44,15 @@ const Footer = () => {
                                 <div className="single-footer newsletter_box">
                                     <h3>We are Available in</h3>
                                     <div className="footer-social-icon">
-                                        <Link to="/" onClick={onClick} style={cssdesign}>
+                                        <a href="https://www.facebook.com/BooknDrive.in/" target="_blank"  style={cssdesign}>
                                             <FaFacebookF />
-                                        </Link>
-                                        <Link to="/" onClick={onClick} style={cssdesign}>
+                                        </a>
+                                        <a href="https://www.linkedin.com/showcase/book-n-drive/" target="_blank" style={cssdesign}>
                                             <FaLinkedinIn />
-                                        </Link>
-                                        <Link to="/" onClick={onClick} style={cssdesign}>
+                                        </a>
+                                        <a href="https://www.instagram.com/bookndrive.in/" target="_blank"  style={cssdesign}>
                                             <FaInstagram />
-                                        </Link>
-                                        <Link to="/" onClick={onClick} style={cssdesign}>
-                                            <FaTwitter />
-                                        </Link>
+                                        </a>
                                     </div>
                                 </div>
 
@@ -99,7 +96,7 @@ const Footer = () => {
                                     Privacy policy
                                 </Link>
                                 </p>
-                            </div> */}
+                            </div>
 
                         </Col>
                         <Col lg={3}>
