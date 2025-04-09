@@ -1,23 +1,41 @@
 self.__precacheManifest = [
   {
+<<<<<<<< HEAD:build/precache-manifest.8a168a3c2740823667b1ff389756e13d.js
     "revision": "05be27384bdf49af0fbf",
     "url": "/static/css/main.e5d34070.chunk.css"
   },
   {
     "revision": "05be27384bdf49af0fbf",
     "url": "/static/js/main.a0859d25.chunk.js"
+========
+    "revision": "4c63119bb9d66fe71d4c",
+    "url": "/static/css/main.1afa4b15.chunk.css"
+  },
+  {
+    "revision": "4c63119bb9d66fe71d4c",
+    "url": "/static/js/main.2c45c4b6.chunk.js"
+>>>>>>>> development:build/precache-manifest.ae447799d2e3b75392c49d3b77243e0a.js
   },
   {
     "revision": "1a6ac104ab12cde3ee9f",
     "url": "/static/js/runtime~main.c3c20de6.js"
   },
   {
+<<<<<<<< HEAD:build/precache-manifest.8a168a3c2740823667b1ff389756e13d.js
     "revision": "e0206288fd6894f2ac71",
     "url": "/static/css/2.30d4a3ae.chunk.css"
   },
   {
     "revision": "e0206288fd6894f2ac71",
     "url": "/static/js/2.79f73c35.chunk.js"
+========
+    "revision": "90ce51856e9224549a2a",
+    "url": "/static/css/2.30d4a3ae.chunk.css"
+  },
+  {
+    "revision": "90ce51856e9224549a2a",
+    "url": "/static/js/2.9a229342.chunk.js"
+>>>>>>>> development:build/precache-manifest.ae447799d2e3b75392c49d3b77243e0a.js
   },
   {
     "revision": "f48346db0cf59db73136",
@@ -160,10 +178,6 @@ self.__precacheManifest = [
     "url": "/static/media/slider-1.ab6a48dc.jpg"
   },
   {
-    "revision": "0dd049d9570744f9e48f38a677f92c69",
-    "url": "/static/media/footer-bg.0dd049d9.jpg"
-  },
-  {
     "revision": "229d0e73c7e1de90a679721b51d98a69",
     "url": "/static/media/slider-2.229d0e73.jpg"
   },
@@ -172,11 +186,19 @@ self.__precacheManifest = [
     "url": "/static/media/find-box-bg.f6eaf215.png"
   },
   {
+    "revision": "0dd049d9570744f9e48f38a677f92c69",
+    "url": "/static/media/footer-bg.0dd049d9.jpg"
+  },
+  {
     "revision": "435cb4417cd75784917ae8ebf65706bc",
     "url": "/static/media/home_banner_mobile.435cb441.webp"
   },
   {
+<<<<<<<< HEAD:build/precache-manifest.8a168a3c2740823667b1ff389756e13d.js
     "revision": "3e7486b2654ed0bb9bb1a6d1f59ea59d",
+========
+    "revision": "554006323a08ab4a627ed9b2b1079a85",
+>>>>>>>> development:build/precache-manifest.ae447799d2e3b75392c49d3b77243e0a.js
     "url": "/index.html"
   }
 ];

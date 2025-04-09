@@ -1,12 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes , Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom";
 
 import Logout from "./logout";
 import Homepage from "./HomePage";
 import Homepage2 from "./HomePage2";
 import LoginPage from "./LoginPage";
 import SignUpPage from "./SignUpPage";
-import Register from "../components/Register"; 
+import Register from "../components/Register";
 import LoginPages2 from "./LoginPages2";
 import CarDetail from "./CarDetail";
 import CarBooking from "./CarBooking";
@@ -28,7 +28,7 @@ import EditOrder from "./EditOrder";
 import ServiceCar from "./ServiceCar";
 import EditServiceCar from "./EditServiceCar";
 
-                            
+
 
 
 import BookingList1 from "./BookingList1";
@@ -104,6 +104,10 @@ import OtpVerification from "./OtpVerification";
 
 import BlogList from "./BlogList";
 import BlogDetails from "./BlogDetails";
+import TermsAndConditions from "./TermsAndConditions";
+import PrivacyPolicy from "./PrivacyPolicy";
+import RefundPolicy from "./RefundPolicy";
+
 
 
 // import AuthUser from "../components/AuthUser";
@@ -111,17 +115,17 @@ import BlogDetails from "./BlogDetails";
 
 const AllRoute = () => {
 
-    let token=getToken(); 
-    
+    let token = getToken();
+
     let basename = '';
     //let basename = '/drive_frontend';
 
-    if(token){
-        let user=getUser(); 
+    if (token) {
+        let user = getUser();
         //console.log(user);
         //For Admin
         //alert(user.role)
-        if(user.role===1){
+        if (user.role === 1) {
             return (
                 <div>
                     <Router basename={basename}>
@@ -129,24 +133,24 @@ const AllRoute = () => {
                             <Route exact path='/' element={<Homepage />} />
                             <Route path='/home' element={<Homepage />} />
                             <Route path='/search' element={<Homepage2 />} />
-                            <Route path='/car-list'  element={<CarList />} />
+                            <Route path='/car-list' element={<CarList />} />
                             <Route path='/car-detail' element={<CarDetail />} />
-                            <Route path='/car-booking'  element={<CarBooking />} />
-                            <Route path='/login'  element={<LoginPage />} />
+                            <Route path='/car-booking' element={<CarBooking />} />
+                            <Route path='/login' element={<LoginPage />} />
                             {/* <Route path='/otp' element={<OtpPage />} /> */}
                             <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
-                            <Route path='/booking-list'  element={<BookingList />} />
+                            <Route path='/booking-list' element={<BookingList />} />
 
-                            <Route path='/verification'  element={<Verification />} />
-                            <Route path='/co-driver'  element={<CoDriver />} />
-                            <Route path='/logout'  element={<Logout />} />
+                            <Route path='/verification' element={<Verification />} />
+                            <Route path='/co-driver' element={<CoDriver />} />
+                            <Route path='/logout' element={<Logout />} />
                             <Route path="add-car" element={<VehicalAdd />} />
                             <Route path="list-car" element={<VehicalList />} />
                             <Route path="all-car" element={<AllCarList />} />
                             <Route path="list-car-dactive" element={<VehicalList1 />} />
                             <Route path="edit-car" element={<VehicalEdit />} />
-                            
+
                             <Route path="/add-model" element={<ModelAdd />} />
                             <Route path="/list-model" element={<ModelList />} />
                             <Route path="/list-model-dactive" element={<ModelList1 />} />
@@ -163,7 +167,7 @@ const AllRoute = () => {
                             <Route path="/add-vendor" element={<VendorAdd />} />
                             <Route path="/edit-vendor" element={<VendorEdit />} />
                             <Route path="/vendor-payment" element={<VendorPayment />} />
-                           
+
 
                             <Route path="/list-user" element={<UserList />} />
                             <Route path="/add-user" element={<UserAdd />} />
@@ -177,9 +181,9 @@ const AllRoute = () => {
 
 
                             <Route path="/add-Coupon" element={<CouponAdd />} />
-                            <Route path="/list-Coupon" element={< CouponList/>} />
+                            <Route path="/list-Coupon" element={< CouponList />} />
 
-                            
+
                             <Route path="*" element={<Homepage />} />
                             <Route path="refund-car" element={<RefundCar />} />
                             <Route path="edit-refund" element={<EditRefundCar />} />
@@ -188,26 +192,26 @@ const AllRoute = () => {
                             <Route path="edit-order" element={<EditOrder />} />
                             <Route path="service-car" element={<ServiceCar />} />
                             <Route path="edit-service" element={<EditServiceCar />} />
-                            <Route path='/vendor-add-car'  element={<VendorAddCar />} />
-                            <Route path='/vendor-list-car'  element={<VendorListCars />} />
-                            <Route path='/vendor-list-car-dactive'  element={<VendorListCar1 />} />
-                            <Route path='/edit-vendor-car'  element={<VendorEditCar />} />
-                            <Route path='/cancel-order'  element={<CancelOrder />} />
-                            <Route path='/edit-order-cancel'  element={<EditCancelOrder />} />
-                            
+                            <Route path='/vendor-add-car' element={<VendorAddCar />} />
+                            <Route path='/vendor-list-car' element={<VendorListCars />} />
+                            <Route path='/vendor-list-car-dactive' element={<VendorListCar1 />} />
+                            <Route path='/edit-vendor-car' element={<VendorEditCar />} />
+                            <Route path='/cancel-order' element={<CancelOrder />} />
+                            <Route path='/edit-order-cancel' element={<EditCancelOrder />} />
+
                             <Route path="*" element={<Homepage />} />
-                            <Route path='/host'  element={<Host />} />
-                            <Route path='/welcome'  element={<Welcome />} />
-                            <Route path='/hostlist'  element={<HostList />} />
-                            <Route path='/payment-success'  element={<Psuccess />} />
-                            <Route path='/payment-exits'  element={<Pexits />} />
-                            <Route path='/payment-invalid'  element={<Pinvalid />} />
-                            <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path='/host' element={<Host />} />
+                            <Route path='/welcome' element={<Welcome />} />
+                            <Route path='/hostlist' element={<HostList />} />
+                            <Route path='/payment-success' element={<Psuccess />} />
+                            <Route path='/payment-exits' element={<Pexits />} />
+                            <Route path='/payment-invalid' element={<Pinvalid />} />
+                            <Route path='/my-passbook' element={<Passbook />} />
+                            <Route path='/blogs' element={<BlogList />} />
                             <Route path="/blogs/:slug" element={<BlogDetails />} />
-
-
-                            
+                            <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
+                            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                            <Route path='/refund-policy' element={<RefundPolicy />} />
 
                         </Routes>
                     </Router>
@@ -217,7 +221,7 @@ const AllRoute = () => {
 
 
 
-        if(user.role===4){
+        if (user.role === 4) {
             return (
                 <div>
                     <Router basename={basename}>
@@ -225,16 +229,16 @@ const AllRoute = () => {
                             <Route exact path='/' element={<Homepage />} />
                             <Route path='/home' element={<Homepage />} />
                             <Route path='/search' element={<Homepage2 />} />
-                            <Route path='/car-list'  element={<CarList />} />
+                            <Route path='/car-list' element={<CarList />} />
                             <Route path='/car-detail' element={<CarDetail />} />
-                            <Route path='/car-booking'  element={<CarBooking />} />
-                            <Route path='/login'  element={<LoginPage />} />
+                            <Route path='/car-booking' element={<CarBooking />} />
+                            <Route path='/login' element={<LoginPage />} />
                             {/* <Route path='/otp' element={<OtpPage />} /> */}
                             <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
-                            <Route path='/booking-list'  element={<BookingList />} />
-                            <Route path='/cancel-order'  element={<CancelOrder />} />
-                            <Route path='/edit-order-cancel'  element={<EditCancelOrder />} />
+                            <Route path='/booking-list' element={<BookingList />} />
+                            <Route path='/cancel-order' element={<CancelOrder />} />
+                            <Route path='/edit-order-cancel' element={<EditCancelOrder />} />
                             <Route path="refund-car" element={<RefundCar />} />
                             <Route path="edit-refund" element={<EditRefundCar />} />
 
@@ -244,30 +248,33 @@ const AllRoute = () => {
                             <Route path="service-car" element={<ServiceCar />} />
                             <Route path="edit-service" element={<EditServiceCar />} />
 
-                            <Route path='/verification'  element={<Verification />} />
-                            <Route path='/co-driver'  element={<CoDriver />} />
-                            <Route path='/logout'  element={<Logout />} />
+                            <Route path='/verification' element={<Verification />} />
+                            <Route path='/co-driver' element={<CoDriver />} />
+                            <Route path='/logout' element={<Logout />} />
                             <Route path="/list-vendor" element={<VendorList />} />
                             <Route path="/add-vendor" element={<VendorAdd />} />
                             <Route path="/edit-vendor" element={<VendorEdit />} />
                             <Route path="/list-vendor-dactive" element={<VendorList1 />} />
                             <Route path="/vendor-payment" element={<VendorPayment />} />
-                            <Route path='/vendor-add-car'  element={<VendorAddCar />} />
-                            <Route path='/vendor-list-car'  element={<VendorListCar />} />
-                            <Route path='/vendor-list-car-dactive'  element={<VendorListCar1 />} />
-                            <Route path='/edit-vendor-car'  element={<VendorEditCar />} />
+                            <Route path='/vendor-add-car' element={<VendorAddCar />} />
+                            <Route path='/vendor-list-car' element={<VendorListCar />} />
+                            <Route path='/vendor-list-car-dactive' element={<VendorListCar1 />} />
+                            <Route path='/edit-vendor-car' element={<VendorEditCar />} />
                             <Route path="all-car" element={<AllCarList />} />
                             <Route path="/list-customer" element={<CustomerList />} />
                             <Route path="*" element={<Homepage />} />
-                            <Route path='/host'  element={<Host />} />
-                            <Route path='/welcome'  element={<Welcome />} />
-                            <Route path='/hostlist'  element={<HostList />} />
-                            <Route path='/payment-success'  element={<Psuccess />} />
-                            <Route path='/payment-exits'  element={<Pexits />} />
-                            <Route path='/payment-invalid'  element={<Pinvalid />} />
-                            <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path='/host' element={<Host />} />
+                            <Route path='/welcome' element={<Welcome />} />
+                            <Route path='/hostlist' element={<HostList />} />
+                            <Route path='/payment-success' element={<Psuccess />} />
+                            <Route path='/payment-exits' element={<Pexits />} />
+                            <Route path='/payment-invalid' element={<Pinvalid />} />
+                            <Route path='/my-passbook' element={<Passbook />} />
+                            <Route path='/blogs' element={<BlogList />} />
                             <Route path="/blogs/:slug" element={<BlogDetails />} />
+                            <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
+                            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                            <Route path='/refund-policy' element={<RefundPolicy />} />
                         </Routes>
                     </Router>
                 </div>
@@ -275,37 +282,40 @@ const AllRoute = () => {
         }
 
         //For Vendor
-        if(user.role===2){
+        if (user.role === 2) {
             return (
                 <div>
                     <Router basename={basename}>
                         <Routes>
                             <Route exact path='/' element={<Homepage />} />
                             <Route path='/home' element={<Homepage />} />
-                             <Route path='/car-list'  element={<CarList />} />
+                            <Route path='/car-list' element={<CarList />} />
                             <Route path='/car-detail' element={<CarDetail />} />
-                            <Route path='/car-booking'  element={<CarBooking />} />
-                            <Route path='/login'  element={<LoginPage />} />
+                            <Route path='/car-booking' element={<CarBooking />} />
+                            <Route path='/login' element={<LoginPage />} />
                             {/* <Route path='/otp' element={<OtpPage />} /> */}
                             <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
-                            <Route path='/my-booking-list'  element={<BookingLists />} />
-                            <Route path='/verification'  element={<Verification />} />
-                            <Route path='/co-driver'  element={<CoDriver />} />
-                            <Route path='/logout'  element={<Logout />} />
+                            <Route path='/my-booking-list' element={<BookingLists />} />
+                            <Route path='/verification' element={<Verification />} />
+                            <Route path='/co-driver' element={<CoDriver />} />
+                            <Route path='/logout' element={<Logout />} />
                             {/* <Route path='/vendor-add-car'  element={<VendorAddCar />} /> */}
                             {/* <Route path='/vendor-list-car'  element={<VendorListCar />} />  */}
-                            <Route path='/my-list-car'  element={<VendorListCars />} />
-                            
-                            <Route path='/welcome'  element={<Welcome />} />
+                            <Route path='/my-list-car' element={<VendorListCars />} />
+
+                            <Route path='/welcome' element={<Welcome />} />
                             <Route path="*" element={<Homepage />} />
-                            <Route path='/host'  element={<Host />} />
-                            <Route path='/payment-success'  element={<Psuccess />} />
-                            <Route path='/payment-exits'  element={<Pexits />} />
-                            <Route path='/payment-invalid'  element={<Pinvalid />} />
-                            <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path='/host' element={<Host />} />
+                            <Route path='/payment-success' element={<Psuccess />} />
+                            <Route path='/payment-exits' element={<Pexits />} />
+                            <Route path='/payment-invalid' element={<Pinvalid />} />
+                            <Route path='/my-passbook' element={<Passbook />} />
+                            <Route path='/blogs' element={<BlogList />} />
                             <Route path="/blogs/:slug" element={<BlogDetails />} />
+                            <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
+                            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                            <Route path='/refund-policy' element={<RefundPolicy />} />
                         </Routes>
                     </Router>
                 </div>
@@ -313,7 +323,7 @@ const AllRoute = () => {
         }
 
         //For Customer
-        if(user.role===3){
+        if (user.role === 3) {
             return (
                 <div>
                     <Router basename={basename}>
@@ -321,29 +331,32 @@ const AllRoute = () => {
                             <Route exact path='/' element={<Homepage />} />
                             <Route path='/home' element={<Homepage />} />
                             <Route path='/search' element={<Homepage2 />} />
-                            <Route path='/car-list'  element={<CarList />} />
+                            <Route path='/car-list' element={<CarList />} />
                             <Route path='/car-detail' element={<CarDetail />} />
-                            <Route path='/car-booking'  element={<CarBooking />} />
-                            <Route path='/login'  element={<LoginPage />} />
+                            <Route path='/car-booking' element={<CarBooking />} />
+                            <Route path='/login' element={<LoginPage />} />
                             {/* <Route path='/otp' element={<OtpPage />} /> */}
                             <Route path='/otp' element={<OtpVerification />} />
                             <Route path='/dashboard' element={<Dashboard />} />
-                            <Route path='/booking-list'  element={<BookingList1 />} />
-                            <Route path='/invoice-print'  element={<InvoicePrint />} />
-                            
-                            <Route path='/verification'  element={<Verification />} />
-                            <Route path='/co-driver'  element={<CoDriver />} />
-                            <Route path='/pay-status'  element={<PayStatus />} />
-                            <Route path='/logout'  element={<Logout />} />
+                            <Route path='/booking-list' element={<BookingList1 />} />
+                            <Route path='/invoice-print' element={<InvoicePrint />} />
+
+                            <Route path='/verification' element={<Verification />} />
+                            <Route path='/co-driver' element={<CoDriver />} />
+                            <Route path='/pay-status' element={<PayStatus />} />
+                            <Route path='/logout' element={<Logout />} />
                             <Route path="*" element={<Homepage />} />
-                            <Route path='/host'  element={<Host />} />
-                            <Route path='/welcome'  element={<Welcome />} />
-                            <Route path='/payment-success'  element={<Psuccess />} />
-                            <Route path='/payment-exits'  element={<Pexits />} />
-                            <Route path='/payment-invalid'  element={<Pinvalid />} />
-                            <Route path='/my-passbook'  element={<Passbook />} />
-                            <Route path='/blogs'  element={<BlogList />} />
+                            <Route path='/host' element={<Host />} />
+                            <Route path='/welcome' element={<Welcome />} />
+                            <Route path='/payment-success' element={<Psuccess />} />
+                            <Route path='/payment-exits' element={<Pexits />} />
+                            <Route path='/payment-invalid' element={<Pinvalid />} />
+                            <Route path='/my-passbook' element={<Passbook />} />
+                            <Route path='/blogs' element={<BlogList />} />
                             <Route path="/blogs/:slug" element={<BlogDetails />} />
+                            <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
+                            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                            <Route path='/refund-policy' element={<RefundPolicy />} />
 
 
                         </Routes>
@@ -352,8 +365,8 @@ const AllRoute = () => {
             );
         }
 
-        
-       
+
+
     } else {
         //For Guest
         return (
@@ -363,23 +376,26 @@ const AllRoute = () => {
                         <Route exact path='/' element={<Homepage />} />
                         <Route path='/home' element={<Homepage />} />
                         <Route path='/search' element={<Homepage2 />} />
-                        <Route path='/car-list'  element={<CarList />} />
+                        <Route path='/car-list' element={<CarList />} />
                         <Route path='/car-detail' element={<CarDetail />} />
-                        <Route path='/car-booking'  element={<CarBooking />} />
-                        <Route path='/login'  element={<LoginPage />} />
+                        <Route path='/car-booking' element={<CarBooking />} />
+                        <Route path='/login' element={<LoginPage />} />
                         {/* <Route path='/otp' element={<OtpPage />} /> */}
                         <Route path='/otp' element={<OtpVerification />} />
                         <Route path='/otps' element={<OtpPages />} />
                         <Route path="*" element={<Homepage />} />
-                        <Route path='/register'  element={<SignUpPage />} />
-                        <Route path='/mpanel'  element={<LoginPages2 />} />
-                        <Route path='/host'  element={<Host />} />
-                        <Route path='/welcome'  element={<Welcome />} />
-                        <Route path='/payment-success'  element={<Psuccess />} />
-                        <Route path='/payment-exits'  element={<Pexits />} />
-                        <Route path='/payment-invalid'  element={<Pinvalid />} />
-                        <Route path='/blogs'  element={<BlogList />} />
+                        <Route path='/register' element={<SignUpPage />} />
+                        <Route path='/mpanel' element={<LoginPages2 />} />
+                        <Route path='/host' element={<Host />} />
+                        <Route path='/welcome' element={<Welcome />} />
+                        <Route path='/payment-success' element={<Psuccess />} />
+                        <Route path='/payment-exits' element={<Pexits />} />
+                        <Route path='/payment-invalid' element={<Pinvalid />} />
+                        <Route path='/blogs' element={<BlogList />} />
                         <Route path="/blogs/:slug" element={<BlogDetails />} />
+                        <Route path='/terms-and-conditions' element={<TermsAndConditions />} />
+                        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+                        <Route path='/refund-policy' element={<RefundPolicy />} />
 
                     </Routes>
                 </Router>

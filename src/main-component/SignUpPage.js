@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import AuthUser, { logOut, https } from "../components/AuthUser";
 import { Link, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import { FaKey, FaUser, AiOutlineMail, FaAngleRight, FaHome } from "react-icons/fa";
+import { FaKey, FaUser, AiOutlineMail, FaAngleRight, FaHome, FaPhoneAlt, FaEnvelopeOpen  } from "react-icons/fa";
 import "../css/Login.css";
 import ReCAPTCHA from "react-google-recaptcha"
 import $ from "jquery";
@@ -53,7 +53,7 @@ class SignUpPage extends Component {
         var address = localStorage.getItem('address') ? localStorage.getItem('address') : '';
 
 
-        this.https.post('/mobile_verifys', { mobile_number: this.state.mobile_number, name: this.state.name, email: this.state.email, address: address, checkbox: this.state.checkbox, capchatext: this.state.capchatext, captcha: this.state.captcha, aadhar: this.state.aadhar, dl: this.state.dl }).then((result) => {
+        this.https.post('/mobile_verifys', { mobile_number: this.state.mobile_number, name: this.state.name, email: this.state.email, address: address, checkbox: this.state.checkbox, capchatext: this.state.capchatext, captcha: this.state.captcha}).then((result) => {
             let status = result.data.status;
             if (status === 1) {
                 localStorage.setItem('mobile_number', this.state.mobile_number);
@@ -221,7 +221,7 @@ class SignUpPage extends Component {
                                                 value={this.state.mobile_number}
                                                 onChange={this.handleChange}
                                             />
-                                            <FaUser />
+                                            <FaPhoneAlt />
                                         </div>
 
                                         <div className="account-form-group">
@@ -243,10 +243,10 @@ class SignUpPage extends Component {
                                                 value={this.state.email}
                                                 onChange={this.handleChange}
                                             />
-                                            <FaUser />
+                                            <FaEnvelopeOpen />
                                         </div>
 
-                                        <div className="account-form-group">
+                                        {/* <div className="account-form-group">
                                             <input
                                                 type="text"
                                                 name="dl"
@@ -266,7 +266,7 @@ class SignUpPage extends Component {
                                                 onChange={this.handleChange}
                                             />
                                             <FaUser />
-                                        </div>
+                                        </div> */}
 
 
 
