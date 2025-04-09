@@ -41,6 +41,7 @@ class CarBooking extends Component {
     this.https = https();
     this.userData = getUser();
     this.state = {
+      isLoading: false,
       showTooltip: false,
       suubmitvalue: '',
       attrs: false,
@@ -430,7 +431,7 @@ class CarBooking extends Component {
 
 
         let gst1 = tts / 100 * 2;
-        if(gst1 < 99){
+        if (gst1 < 99) {
           gst1 = 99;
         }
         const gst = gst1.toFixed(2);
@@ -594,6 +595,8 @@ class CarBooking extends Component {
     var rent_id = localStorage.getItem('rent_id')
     const date1 = localStorage.getItem("date");
 
+
+
     this.https.post('/access_payment', {
       //this.https.post('/create_order',{
       token: this.token,
@@ -623,6 +626,7 @@ class CarBooking extends Component {
       car_id: rent_id,
       date1: date1
     }).then((result) => {
+
       let status = result.data.status;
       if (status === 1) {
         const res = result.data.data; // Get order details from API response
@@ -635,9 +639,10 @@ class CarBooking extends Component {
           name: "BookNDrive",
           description: "Car Booking Payment",
           order_id: res.order_id, // Razorpay order ID
+
           handler: async (response) => {
             try {
-
+              this.setState({ isLoading: true });
               // Send payment details to backend
               this.https.post("/razorpay_callback", {
                 token: this.token, // Token received from login
@@ -646,6 +651,7 @@ class CarBooking extends Component {
                 order_id: response.razorpay_order_id,
                 signature: response.razorpay_signature,
               }).then((result) => {
+                this.setState({ isLoading: false });
                 console.log(result.data);
                 if (result.data.status === 1) {
                   const MySwal = withReactContent(Swal);
@@ -897,6 +903,13 @@ class CarBooking extends Component {
 
     return (
       <Fragment>
+        {this.state.isLoading && (
+          <div className="position-fixed top-0 start-0 w-100 h-100 bg-white d-flex justify-content-center align-items-center" style={{ zIndex: 9999 }}>
+            <div>
+              <p>Please don't refresh the page..</p>
+            </div>
+          </div>
+        )}
         <Header />
 
         {/* <section className="rent-drive-breadcromb-area section_70">

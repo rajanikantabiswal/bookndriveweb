@@ -24,6 +24,7 @@ const CarList = () => {
     const [isOpenSidebar, setIsOpenSidebar] = useState(false);
     const [selectedDateRange, setSelectedDateRange] = useState(null);
     const [x, setX] = useState(1);
+    const [loader, setLoader] = useState(false);
 
     const toggleSidebar = () => {
         setIsOpenSidebar(!isOpenSidebar);
@@ -353,7 +354,14 @@ const CarList = () => {
 
                         <div className="row">
                             <div className="col-lg-9">
-                                <div className="car-listing2 py-3">
+                                <div className="car-listing2 py-3 ">
+                                {loader && (
+                                    <div className="loader">
+                                        <div className="spinner-border" role="status">
+                                            <span className="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                )}
                                     {bts}
                                 </div>
                             </div>

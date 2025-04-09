@@ -629,6 +629,24 @@ button.rent-drive-btn-theme:hover {
   color: #000;
 }
 
+
+.loader{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  min-height: 200px;
+  min-width: 100%;
+  overflow: hidden;
+  opacity: 0.9;
+}
+
 /*--------------------------------------------------------------
 # Desktop Navigation 
 --------------------------------------------------------------*/
@@ -5420,6 +5438,7 @@ input[type="radio"]:checked ~ label {
   gap: 20px;
 }
 .car-listing2 {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
