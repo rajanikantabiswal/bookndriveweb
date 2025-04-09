@@ -21,6 +21,8 @@ const OtpVerification = () => {
   const [otp, setOtp] = useState('');
   const [error, setError] = useState('');
   const [recaptchaVerifier, setRecaptchaVerifier] = useState(null);
+  const [otpSent, setOtpSent] = useState(false);
+
 
   useEffect(() => {
     // Retrieve phone number from local storage
@@ -76,10 +78,12 @@ const OtpVerification = () => {
     signInWithPhoneNumber(auth, phoneNumber, verifier)
       .then((confirmationResult) => {
         window.confirmationResult = confirmationResult;
+        setOtpSent(true);
         const MySwal = withReactContent(Swal);
         MySwal.fire('OTP sent successfully! Please check your messages.');
       })
       .catch((error) => {
+        setOtpSent(false);
         console.error('OTP Send Error:', error);
 
         // Detailed error handling
@@ -165,6 +169,8 @@ const OtpVerification = () => {
 
           const errorMessage = errorMessages[error.code] || errorMessages['default'];
           setError(errorMessage);
+          const MySwal = withReactContent(Swal);
+          MySwal.fire(errorMessage);
         });
     } catch (err) {
       console.error('Unexpected error during OTP verification:', err);
@@ -202,7 +208,7 @@ const OtpVerification = () => {
                   </div>
 
                   <p>
-                    <button type="submit" className="rent-drive-theme-btn" >Verify OTP</button>
+                    <button type="submit" className="rent-drive-theme-btn" disabled={!otpSent}>Verify OTP</button>
                   </p>
 
                 </form>

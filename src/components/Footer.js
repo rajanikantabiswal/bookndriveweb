@@ -78,7 +78,7 @@ const Footer = () => {
                         </Col>
                         <Col lg={3}>
 
-                            <div className="footer-address">
+                            {/* <div className="footer-address">
                                 <h3>Our Services</h3>
                                 <p>
                                 <Link to="/" onClick={onClick} style={cssdesign}>
@@ -100,7 +100,7 @@ const Footer = () => {
                                     Tour Events
                                 </Link>
                                 </p>
-                            </div>
+                            </div> */}
 
                         </Col>
                         <Col lg={3}>
@@ -108,11 +108,11 @@ const Footer = () => {
                             <div className="footer-address">
                                 <h3>Head Office</h3>
                                 <p>
-                                First Floor Plot  No 2170/4071, <span>Ravitalkies Road Bhubaneshwar 751002 Odisha</span>
+                                First Floor Plot  No 2170/4071, <span>Ravi Talkies Road, Bhubaneshwar, 751002, Odisha</span>
                                 </p>
                                 <p>Phone: 8455888889 
                                 <br/>Email: info@bookndrive.in
-                                <br/>Office Time: 9AM- 4PM</p>
+                                <br/>Office Time: 24x7 Available</p>
                             </div>
                         </Col>
                     </Row>
