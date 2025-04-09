@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3c2da6b6cc242dad9843",
+    "revision": "05be27384bdf49af0fbf",
     "url": "/static/css/main.e5d34070.chunk.css"
   },
   {
-    "revision": "3c2da6b6cc242dad9843",
-    "url": "/static/js/main.21894b79.chunk.js"
+    "revision": "05be27384bdf49af0fbf",
+    "url": "/static/js/main.a0859d25.chunk.js"
   },
   {
     "revision": "1a6ac104ab12cde3ee9f",
@@ -40,8 +40,8 @@ self.__precacheManifest = [
     "url": "/static/media/setting-cog.d8bb2027.svg"
   },
   {
-    "revision": "f97e3bbf73254b0112091d0192f17aec",
-    "url": "/static/media/slick.f97e3bbf.svg"
+    "revision": "d41f55a78e6f49a5512878df1737e58a",
+    "url": "/static/media/slick.d41f55a7.ttf"
   },
   {
     "revision": "ced611daf7709cc778da928fec876475",
@@ -52,8 +52,8 @@ self.__precacheManifest = [
     "url": "/static/media/slick.b7c9e1e4.woff"
   },
   {
-    "revision": "d41f55a78e6f49a5512878df1737e58a",
-    "url": "/static/media/slick.d41f55a7.ttf"
+    "revision": "f97e3bbf73254b0112091d0192f17aec",
+    "url": "/static/media/slick.f97e3bbf.svg"
   },
   {
     "revision": "883234ed5af0bd96bdae68658d23278e",
@@ -156,27 +156,27 @@ self.__precacheManifest = [
     "url": "/static/media/car-detail.0eb30e17.jpg"
   },
   {
-    "revision": "435cb4417cd75784917ae8ebf65706bc",
-    "url": "/static/media/home_banner_mobile.435cb441.webp"
-  },
-  {
     "revision": "ab6a48dcd62dc1b5845c06a4c230ee9f",
     "url": "/static/media/slider-1.ab6a48dc.jpg"
-  },
-  {
-    "revision": "229d0e73c7e1de90a679721b51d98a69",
-    "url": "/static/media/slider-2.229d0e73.jpg"
   },
   {
     "revision": "0dd049d9570744f9e48f38a677f92c69",
     "url": "/static/media/footer-bg.0dd049d9.jpg"
   },
   {
+    "revision": "229d0e73c7e1de90a679721b51d98a69",
+    "url": "/static/media/slider-2.229d0e73.jpg"
+  },
+  {
     "revision": "f6eaf215ba89f431ebe2fcd2c9ae8186",
     "url": "/static/media/find-box-bg.f6eaf215.png"
   },
   {
-    "revision": "f3218ff686b248b46b63b195d55728e0",
+    "revision": "435cb4417cd75784917ae8ebf65706bc",
+    "url": "/static/media/home_banner_mobile.435cb441.webp"
+  },
+  {
+    "revision": "3e7486b2654ed0bb9bb1a6d1f59ea59d",
     "url": "/index.html"
   }
 ];
