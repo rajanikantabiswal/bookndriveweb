@@ -14,7 +14,7 @@ const BlogSection = () => {
             </div>
             <div className="row">
 
-                {blogData.map((blog) => (
+                {blogData.slice(0, 3).map((blog) => (
                     <div className="col-lg-4" key={blog.id}>
                         <Link
                             to={`/blogs/${blog.slug}`}

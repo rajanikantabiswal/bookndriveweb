@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import AuthUser, { logOut, https } from "../components/AuthUser";
 import { Link, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import { FaKey, FaUser, AiOutlineMail, FaAngleRight, FaHome, FaPhoneAlt, FaEnvelopeOpen  } from "react-icons/fa";
+import { FaKey, FaUser, AiOutlineMail, FaAngleRight, FaHome, FaPhoneAlt, FaEnvelopeOpen } from "react-icons/fa";
 import "../css/Login.css";
 import ReCAPTCHA from "react-google-recaptcha"
 import $ from "jquery";
@@ -53,7 +53,7 @@ class SignUpPage extends Component {
         var address = localStorage.getItem('address') ? localStorage.getItem('address') : '';
 
 
-        this.https.post('/mobile_verifys', { mobile_number: this.state.mobile_number, name: this.state.name, email: this.state.email, address: address, checkbox: this.state.checkbox, capchatext: this.state.capchatext, captcha: this.state.captcha}).then((result) => {
+        this.https.post('/mobile_verifys', { mobile_number: this.state.mobile_number, name: this.state.name, email: this.state.email, address: address, checkbox: this.state.checkbox, capchatext: this.state.capchatext, captcha: this.state.captcha }).then((result) => {
             let status = result.data.status;
             if (status === 1) {
                 localStorage.setItem('mobile_number', this.state.mobile_number);
@@ -331,17 +331,20 @@ class SignUpPage extends Component {
                                             />
                                             <label htmlFor="Freelance">
                                                 <span />
-                                                Apply Term & Condition
+                                                Agree Term & Condition
                                             </label>
+                                            
                                         </p>
-
+                                        <span><Link to="/terms-and-conditions" className="text-decoration-underline text-primary">Click here</Link> to read our terms and conditions</span>
                                         <p>
                                             <button type="submit" className="rent-drive-theme-btn" >Continue</button>
                                         </p>
 
                                     </form>
 
-                                    <p>If you have not registered yet? <a href="/register">Signup</a> </p>
+                                    <div className="login-page-footer mt-4">
+                                        <p>Already have an account?<Link to="/login" className="text-decoration-underline text-primary">Login</Link></p>
+                                    </div>
 
                                 </div>
                             </Col>

@@ -260,9 +260,6 @@ class LoginPage extends Component {
                                             title="Enter Captcha"
                                             className="input form-control mb20"   style={style} onKeyUp={this.handleChange1} placeholder="Enter Text Below"/></p>
                                     
-                                        
-
-                                         
                                            <div class="d-flex justify-content-between align-items-center">
                                              <label>
                                               <span id="captcha_image_span">
@@ -281,19 +278,14 @@ class LoginPage extends Component {
                                 </div>
 
                             </div>
-                            
-
-                      
-                            
-                          
                             <p>
                                 <button type="submit" className="rent-drive-theme-btn" >Continue</button>
                             </p>
                             
                             </form>
-
-                            
-
+                            <div className="login-page-footer mt-4">
+                                <p>Don't have an account? <Link to="/register" className="text-decoration-underline text-primary">Create an account</Link></p> 
+                            </div>
                         </div>
                     </Col>
                 </Row>
