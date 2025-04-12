@@ -61,7 +61,7 @@ class VehicalAdd extends Component {
       formData.append('type',this.state.type);
       
 
-      axios.post(`${config.PUBLIC_URL}add_city`, formData).then((result)=>{
+      axios.post(`${config.BASE_URL}/add_city`, formData).then((result)=>{
             let status=result.data.status; 
             if(status === 1){
                  const MySwal = withReactContent(Swal);

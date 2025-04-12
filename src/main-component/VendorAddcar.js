@@ -218,7 +218,7 @@ class VendorAddCar extends Component {
 
       //console.log(formData);
 
-      axios.post(`${config.PUBLIC_URL}add_vendor_car`, formData).then((result) => {
+      axios.post(`${config.BASE_URL}/add_vendor_car`, formData).then((result) => {
          let status = result.data.status;
          if (status === 1) {
             const MySwal = withReactContent(Swal);

@@ -316,6 +316,33 @@ class FindCar extends Component {
       selectedDate2: newSelectedDate2,
       showRangePicker: false,
     });
+    // Format the range for storage (using your formatting logic)
+    const formattedStart = new Date(newSelectedDate).toLocaleString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+
+    const formattedEnd = new Date(newSelectedDate2).toLocaleString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+    const dateRange = formattedStart + " - " + formattedEnd;
+    localStorage.setItem("from", this.statefrom);
+    localStorage.setItem("date", dateRange);
+    localStorage.setItem("formattedDate", newSelectedDate);
+    localStorage.setItem("formattedDate2", newSelectedDate2);
+
+    const { navigate } = this.props;
+    navigate("../car-list");
+    window.location.replace('../car-list');
   }
 
   // Helper: Format a date with an hour value to "MMM D, YYYY h:00 AM/PM"

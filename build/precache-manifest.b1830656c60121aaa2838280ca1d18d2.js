@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "d13c06b9bbeb0eeb706c",
+    "revision": "0b22fe4c974689920a58",
     "url": "/static/css/main.1afa4b15.chunk.css"
   },
   {
-    "revision": "d13c06b9bbeb0eeb706c",
-    "url": "/static/js/main.18029b9a.chunk.js"
+    "revision": "0b22fe4c974689920a58",
+    "url": "/static/js/main.8694a325.chunk.js"
   },
   {
     "revision": "1a6ac104ab12cde3ee9f",
@@ -156,27 +156,27 @@ self.__precacheManifest = [
     "url": "/static/media/car-detail.0eb30e17.jpg"
   },
   {
-    "revision": "ab6a48dcd62dc1b5845c06a4c230ee9f",
-    "url": "/static/media/slider-1.ab6a48dc.jpg"
-  },
-  {
-    "revision": "435cb4417cd75784917ae8ebf65706bc",
-    "url": "/static/media/home_banner_mobile.435cb441.webp"
-  },
-  {
-    "revision": "f6eaf215ba89f431ebe2fcd2c9ae8186",
-    "url": "/static/media/find-box-bg.f6eaf215.png"
+    "revision": "229d0e73c7e1de90a679721b51d98a69",
+    "url": "/static/media/slider-2.229d0e73.jpg"
   },
   {
     "revision": "0dd049d9570744f9e48f38a677f92c69",
     "url": "/static/media/footer-bg.0dd049d9.jpg"
   },
   {
-    "revision": "229d0e73c7e1de90a679721b51d98a69",
-    "url": "/static/media/slider-2.229d0e73.jpg"
+    "revision": "ab6a48dcd62dc1b5845c06a4c230ee9f",
+    "url": "/static/media/slider-1.ab6a48dc.jpg"
   },
   {
-    "revision": "68205db649e12cd31029b97b1b38fcad",
+    "revision": "f6eaf215ba89f431ebe2fcd2c9ae8186",
+    "url": "/static/media/find-box-bg.f6eaf215.png"
+  },
+  {
+    "revision": "435cb4417cd75784917ae8ebf65706bc",
+    "url": "/static/media/home_banner_mobile.435cb441.webp"
+  },
+  {
+    "revision": "b1eb6e534a41d21d802779ff627110d0",
     "url": "/index.html"
   }
 ];

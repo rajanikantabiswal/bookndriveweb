@@ -92,7 +92,7 @@ class VehicalAdd extends Component {
       formData.append('id',id);
       
 
-      axios.post(`${config.PUBLIC_URL}add_city`, formData).then((result)=>{
+      axios.post(`${config.BASE_URL}/add_city`, formData).then((result)=>{
             let status=result.data.status; 
             if(status === 1){
               

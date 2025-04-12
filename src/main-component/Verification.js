@@ -87,7 +87,7 @@ class Verification extends Component {
             formData.append('image3',this.owner_book2.current.files[0],this.owner_book2.current.files[0].na);
          }
        
-         axios.post(`${config.PUBLIC_URL}verify_customer`, formData).then((result)=>{
+         axios.post(`${config.BASE_URL}/verify_customer`, formData).then((result)=>{
   
          const MySwal = withReactContent(Swal);
           MySwal.fire('Request Success');
