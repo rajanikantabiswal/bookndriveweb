@@ -20,8 +20,8 @@ const App = () => {
   return (
     <Fragment>
       <Helmet>
-        <meta name='keywords' content='BookNDrive' />
-        <meta name='description' content='BookNDrive' />
+        <meta name='keywords' content='self drive car rental Bhubaneswar, BookNDrive, car rental Bhubaneswar, rent a car Bhubaneswar, self drive cars Odisha, Bhubaneswar car hire, BookNDrive car booking, car rental service Bhubaneswar, affordable car rental Odisha, rent car online Bhubaneswar, self drive car booking, Bhubaneswar self drive rental, BookNDrive Odisha, book car without driver Bhubaneswar, car rental app Bhubaneswar' />
+        <meta name="description" content="BookNDrive offers affordable and reliable self-drive car rentals in Bhubaneswar. Choose from a wide range of cars and enjoy hassle-free booking, 24/7 support, and doorstep delivery." />
         <title>BookNDrive</title>
       </Helmet>
       <AllRoute />

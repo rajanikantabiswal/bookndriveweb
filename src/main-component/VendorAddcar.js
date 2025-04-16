@@ -28,7 +28,8 @@ const CAR_FEATURES = [
    'Leather Seats',
    'Touchscreen Infotainment',
    'GPS Navigation',
-   'Keyless Entry'
+   'Keyless Entry',
+   'Sunroof'
 ];
 
 class VendorAddCar extends Component {
@@ -203,20 +204,22 @@ class VendorAddCar extends Component {
 
 
       if (this.state.file === 1) {
-         formData.append('image', this.car_image.current.files[0], this.car_image.current.files[0].na);
+         formData.append('image', this.car_image.current.files[0]);
       }
       if (this.state.file1 === 1) {
-         formData.append('image1', this.owner_book.current.files[0], this.owner_book.current.files[0].na);
+
+         formData.append('image1', this.owner_book.current.files[0]);
       }
       if (this.state.file2 === 1) {
-         formData.append('image2', this.owner_book1.current.files[0], this.owner_book1.current.files[0].na);
+         formData.append('image2', this.owner_book1.current.files[0]);
       }
 
       if (this.state.file3 === 1) {
-         formData.append('image3', this.owner_book2.current.files[0], this.owner_book2.current.files[0].na);
+         formData.append('image3', this.owner_book2.current.files[0]);
       }
 
-      this.https.post('/add_vendor_car', formData).then((result) => {
+
+      axios.post(`${config.BASE_URL}/add_vendor_car`, formData).then((result)=>{
          let status = result.data.status;
          if (status === 1) {
             const MySwal = withReactContent(Swal);

@@ -16,6 +16,23 @@ import withReactContent from 'sweetalert2-react-content';
 import config from "../config";
 
 
+const CAR_FEATURES = [
+   'Air Conditioning',
+   'Power Windows',
+   'Central Locking',
+   'Airbags',
+   'Music System',
+   'Rear Parking Sensor',
+   'Bluetooth',
+   'USB Connectivity',
+   'Leather Seats',
+   'Touchscreen Infotainment',
+   'GPS Navigation',
+   'Keyless Entry',
+   'Sunroof'
+];
+
+
 class VendorAddCar extends Component {
 
    constructor(props) {
@@ -51,7 +68,13 @@ class VendorAddCar extends Component {
          transmission_type: '',
          fuel_type: '',
          insurance_amount: '',
-         security_deposit: ''
+         security_deposit: '',
+
+         car_features: [],
+         carArray: [],
+         modalArray: [],
+         varientArray: [],
+         vendorArray: []
       }
 
       this.handleChange = this.handleChange.bind(this)
@@ -60,12 +83,7 @@ class VendorAddCar extends Component {
       this.https = https();
 
 
-      this.state = {
-         carArray: [],
-         modalArray: [],
-         varientArray: [],
-         vendorArray: []
-      };
+
 
       this.Carlist = this.Carlist.bind(this)
       this.Vendorlist = this.Vendorlist.bind(this)
@@ -121,6 +139,25 @@ class VendorAddCar extends Component {
       this.imagestore();
    }
 
+   handleFeatureToggle(feature) {
+      this.setState(prevState => {
+         const currentFeatures = prevState.car_features;
+         const featureIndex = currentFeatures.indexOf(feature);
+
+         if (featureIndex > -1) {
+            // Remove feature if already exists
+            return {
+               car_features: currentFeatures.filter(f => f !== feature)
+            };
+         } else {
+            // Add feature
+            return {
+               car_features: [...currentFeatures, feature]
+            };
+         }
+      });
+   }
+
    handleSubmit(event) {
       event.preventDefault();
       //var car_name = event.target.car_name.value;
@@ -147,6 +184,7 @@ class VendorAddCar extends Component {
       formData.append('registration_valid_upto', this.state.registration_valid_upto);
       formData.append('insurance_valid_upto', this.state.insurance_valid_upto);
       formData.append('car_price', this.state.car_price);
+      formData.append('car_features', this.state.car_features.join(','));
 
 
       if (this.state.file === 1) {
@@ -167,7 +205,7 @@ class VendorAddCar extends Component {
       formData.append('id', id);
 
 
-      this.https.post('/add_vendor_car', formData).then((result) => {
+      axios.post(`${config.BASE_URL}/add_vendor_car`, formData).then((result) => {
          let status = result.data.status;
          if (status === '1') {
             const MySwal = withReactContent(Swal);
@@ -194,7 +232,7 @@ class VendorAddCar extends Component {
                modalArray: result.data.data
             });
          }
-      })
+      });
 
       this.https.post('/varient_list', { token: this.token, model_id: result.data.data.model_id }).then((result) => {
          let status = result.data.status;
@@ -203,7 +241,11 @@ class VendorAddCar extends Component {
                varientArray: result.data.data
             });
          }
-      })
+      });
+
+
+      const carFeaturesString = result.data.data.car_features;
+      const carFeaturesArray = carFeaturesString.split(',').map(item => item.trim());
 
       this.setState({
          vendor: result.data.data.vendor_id,
@@ -231,7 +273,9 @@ class VendorAddCar extends Component {
          owner_book: result.data.data.owner_book,
          puc_file: result.data.data.puc_file,
          insu_file: result.data.data.insu_file,
+         car_features: carFeaturesArray
       });
+    
 
    };
 
@@ -813,6 +857,29 @@ class VendorAddCar extends Component {
                                                    <Col md={4}>
                                                       <Form.Control type="file" accept="image/*" name="file1" onChange={this.handleChange} ref={this.owner_book} />
                                                       <a href={config.PUBLIC_URL + this.state.owner_book} target="_blank"><img src={config.PUBLIC_URL + this.state.owner_book} width='60' /></a>
+                                                   </Col>
+                                                </Row>
+                                             </Form.Group>
+
+                                             <Form.Group className="mb-5">
+                                                <Row className="w-100">
+                                                   <Col md={2}>
+                                                      <Form.Label>Car Features</Form.Label>
+                                                   </Col>
+                                                   <Col md={10}>
+                                                      <div className="d-flex flex-wrap">
+                                                         {this.state.car_features && CAR_FEATURES.map((feature) => (
+                                                            <div key={feature} className="mr-3 mb-2">
+                                                               <Form.Check
+                                                                  type="checkbox"
+                                                                  id={feature}
+                                                                  label={feature}
+                                                                  checked={this.state.car_features.includes(feature)}
+                                                                  onChange={() => this.handleFeatureToggle(feature)}
+                                                               />
+                                                            </div>
+                                                         ))}
+                                                      </div>
                                                    </Col>
                                                 </Row>
                                              </Form.Group>
