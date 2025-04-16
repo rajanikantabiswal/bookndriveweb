@@ -226,7 +226,8 @@ const CarList = () => {
             <div className="car-card">
                 {/* Car Image with Badge */}
                 <div className="position-relative">
-                    <Link to="/car-booking" className="d-block overflow-hidden" style={{ height: "200px" }}>
+                    <Link onClick={(e) => localStorage.setItem('rent_id', val.id)}
+                        to="/car-booking" className="d-block overflow-hidden" style={{ height: "200px" }}>
                         <img
                             src={config.PUBLIC_URL + val.image}
                             alt={`${val.car_name} ${val.model_name}`}
@@ -248,7 +249,8 @@ const CarList = () => {
                             <small> ({totalHours} hrs)</small>
                         </span>
                     )}
-                    <Link to="/car-booking" className="text-decoration-none">
+                    <Link onClick={(e) => localStorage.setItem('rent_id', val.id)}
+                        to="/car-booking" className="text-decoration-none">
                         <h5 className="card-title fw-bold text-dark mb-3 text-truncate">
                             {val.car_name} {val.model_name} {val.variant_name}
                         </h5>
@@ -355,13 +357,13 @@ const CarList = () => {
                         <div className="row">
                             <div className="col-lg-9">
                                 <div className="car-listing2 py-3 ">
-                                {loader && (
-                                    <div className="loader">
-                                        <div className="spinner-border" role="status">
-                                            <span className="visually-hidden">Loading...</span>
+                                    {loader && (
+                                        <div className="loader">
+                                            <div className="spinner-border" role="status">
+                                                <span className="visually-hidden">Loading...</span>
+                                            </div>
                                         </div>
-                                    </div>
-                                )}
+                                    )}
                                     {bts}
                                 </div>
                             </div>
