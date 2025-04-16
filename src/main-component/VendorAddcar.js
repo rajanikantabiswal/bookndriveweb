@@ -216,19 +216,6 @@ class VendorAddCar extends Component {
          formData.append('image3', this.owner_book2.current.files[0], this.owner_book2.current.files[0].na);
       }
 
-      //console.log(formData);
-
-      // axios.post(`${config.BASE_URL}/add_vendor_car`, formData).then((result) => {
-      //    let status = result.data.status;
-      //    if (status === 1) {
-      //       const MySwal = withReactContent(Swal);
-      //       MySwal.fire('Successfully Added');
-      //    } else {
-      //       const MySwal = withReactContent(Swal);
-      //       MySwal.fire(result.data.message);
-      //    }
-      // });
-
       this.https.post('/add_vendor_car', formData).then((result) => {
          let status = result.data.status;
          if (status === 1) {

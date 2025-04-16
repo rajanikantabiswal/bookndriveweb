@@ -167,19 +167,6 @@ class VendorAddCar extends Component {
       formData.append('id', id);
 
 
-      // axios.post(`${config.BASE_URL}/add_vendor_car`, formData).then((result) => {
-      //    let status = result.data.status;
-      //    if (status === '1') {
-      //       const MySwal = withReactContent(Swal);
-      //       MySwal.fire('Successfully Updated');
-
-      //    } else {
-
-      //       const MySwal = withReactContent(Swal);
-      //       MySwal.fire(result.data.message);
-      //    }
-      // });
-
       this.https.post('/add_vendor_car', formData).then((result) => {
          let status = result.data.status;
          if (status === '1') {
