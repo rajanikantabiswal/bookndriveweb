@@ -29,7 +29,7 @@ const CAR_FEATURES = [
    'Touchscreen Infotainment',
    'GPS Navigation',
    'Keyless Entry'
- ];
+];
 
 class VendorAddCar extends Component {
 
@@ -83,7 +83,7 @@ class VendorAddCar extends Component {
       this.https = https();
 
 
- 
+
 
       this.Carlist = this.Carlist.bind(this)
       this.Vendorlist = this.Vendorlist.bind(this)
@@ -152,22 +152,22 @@ class VendorAddCar extends Component {
 
    handleFeatureToggle(feature) {
       this.setState(prevState => {
-        const currentFeatures = prevState.car_features;
-        const featureIndex = currentFeatures.indexOf(feature);
-        
-        if (featureIndex > -1) {
-          // Remove feature if already exists
-          return {
-            car_features: currentFeatures.filter(f => f !== feature)
-          };
-        } else {
-          // Add feature
-          return {
-            car_features: [...currentFeatures, feature]
-          };
-        }
+         const currentFeatures = prevState.car_features;
+         const featureIndex = currentFeatures.indexOf(feature);
+
+         if (featureIndex > -1) {
+            // Remove feature if already exists
+            return {
+               car_features: currentFeatures.filter(f => f !== feature)
+            };
+         } else {
+            // Add feature
+            return {
+               car_features: [...currentFeatures, feature]
+            };
+         }
       });
-    }
+   }
 
    handleSubmit(event) {
       event.preventDefault();
@@ -218,7 +218,18 @@ class VendorAddCar extends Component {
 
       //console.log(formData);
 
-      axios.post(`${config.BASE_URL}/add_vendor_car`, formData).then((result) => {
+      // axios.post(`${config.BASE_URL}/add_vendor_car`, formData).then((result) => {
+      //    let status = result.data.status;
+      //    if (status === 1) {
+      //       const MySwal = withReactContent(Swal);
+      //       MySwal.fire('Successfully Added');
+      //    } else {
+      //       const MySwal = withReactContent(Swal);
+      //       MySwal.fire(result.data.message);
+      //    }
+      // });
+
+      this.https.post('/add_vendor_car', formData).then((result) => {
          let status = result.data.status;
          if (status === 1) {
             const MySwal = withReactContent(Swal);
@@ -842,7 +853,7 @@ class VendorAddCar extends Component {
                                                    </Col>
                                                 </Row>
                                              </Form.Group>
-                                              <Form.Group className="mb-5">
+                                             <Form.Group className="mb-5">
                                                 <Row className="w-100">
                                                    <Col md={2}>
                                                       <Form.Label>Car Features</Form.Label>
@@ -879,7 +890,7 @@ class VendorAddCar extends Component {
                                                 </Row>
                                              </Form.Group>
 
-                                            
+
                                           </div>
 
 
